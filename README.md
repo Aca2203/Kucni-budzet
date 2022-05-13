@@ -5,7 +5,7 @@
 
 Јаки ентитети:
   1. Промет - садржи информације о трансакцији (id, datum, novcanik, osoba, trosak, kolicina, organizaciona jedinica, firma, ulaz, izlaz, opis) -- uraditi pozajmice (uzeo novac, sutra treba da vrati)
-  2. Особа - подаци о особи (jmbg, ime, prezime, email, лозинка, uloga) -- stanje jedne osobe predstavlja zbir svih stanja u njenim novcanicima
+  2. Особа - подаци о особи (jmbg, ime, prezime, email, lozinka, uloga) -- stanje jedne osobe predstavlja zbir svih stanja u njenim novcanicima
 
 Слаби ентитети (шифарници):
   3. Новчаник (id, naziv, stanje, osoba_jmbg) - одакле узимамо новац
