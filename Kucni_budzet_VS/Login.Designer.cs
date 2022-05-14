@@ -34,6 +34,7 @@ namespace Kucni_budzet_VS
             this.txt_email = new System.Windows.Forms.TextBox();
             this.txt_lozinka = new System.Windows.Forms.TextBox();
             this.btn_prijava = new System.Windows.Forms.Button();
+            this.lbl_poruka = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbl_email
@@ -65,6 +66,7 @@ namespace Kucni_budzet_VS
             // 
             this.txt_lozinka.Location = new System.Drawing.Point(353, 178);
             this.txt_lozinka.Name = "txt_lozinka";
+            this.txt_lozinka.PasswordChar = '*';
             this.txt_lozinka.Size = new System.Drawing.Size(265, 22);
             this.txt_lozinka.TabIndex = 3;
             // 
@@ -76,13 +78,22 @@ namespace Kucni_budzet_VS
             this.btn_prijava.TabIndex = 4;
             this.btn_prijava.Text = "Пријави се!";
             this.btn_prijava.UseVisualStyleBackColor = true;
-            this.btn_prijava.Click += new System.EventHandler(this.button1_Click);
+            this.btn_prijava.Click += new System.EventHandler(this.btn_prijava_Click);
+            // 
+            // lbl_poruka
+            // 
+            this.lbl_poruka.AutoSize = true;
+            this.lbl_poruka.Location = new System.Drawing.Point(353, 335);
+            this.lbl_poruka.Name = "lbl_poruka";
+            this.lbl_poruka.Size = new System.Drawing.Size(0, 17);
+            this.lbl_poruka.TabIndex = 5;
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lbl_poruka);
             this.Controls.Add(this.btn_prijava);
             this.Controls.Add(this.txt_lozinka);
             this.Controls.Add(this.txt_email);
@@ -90,6 +101,7 @@ namespace Kucni_budzet_VS
             this.Controls.Add(this.lbl_email);
             this.Name = "Login";
             this.Text = "Пријава";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Login_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -102,6 +114,7 @@ namespace Kucni_budzet_VS
         private System.Windows.Forms.TextBox txt_email;
         private System.Windows.Forms.TextBox txt_lozinka;
         private System.Windows.Forms.Button btn_prijava;
+        private System.Windows.Forms.Label lbl_poruka;
     }
 }
 

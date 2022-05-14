@@ -1,0 +1,12 @@
+C:\Users\Sale\Desktop\Programi\Kucni-budzet\Kucni_budzet_VS\bin\Debug\Kucni_budzet_VS.exe.config
+C:\Users\Sale\Desktop\Programi\Kucni-budzet\Kucni_budzet_VS\bin\Debug\Kucni_budzet_VS.exe
+C:\Users\Sale\Desktop\Programi\Kucni-budzet\Kucni_budzet_VS\bin\Debug\Kucni_budzet_VS.pdb
+C:\Users\Sale\Desktop\Programi\Kucni-budzet\Kucni_budzet_VS\obj\Debug\Kucni_budzet_VS.csprojAssemblyReference.cache
+C:\Users\Sale\Desktop\Programi\Kucni-budzet\Kucni_budzet_VS\obj\Debug\Kucni_budzet_VS.Login.resources
+C:\Users\Sale\Desktop\Programi\Kucni-budzet\Kucni_budzet_VS\obj\Debug\Kucni_budzet_VS.Properties.Resources.resources
+C:\Users\Sale\Desktop\Programi\Kucni-budzet\Kucni_budzet_VS\obj\Debug\Kucni_budzet_VS.csproj.GenerateResource.cache
+C:\Users\Sale\Desktop\Programi\Kucni-budzet\Kucni_budzet_VS\obj\Debug\Kucni_budzet_VS.csproj.CoreCompileInputs.cache
+C:\Users\Sale\Desktop\Programi\Kucni-budzet\Kucni_budzet_VS\obj\Debug\Kucni_budzet_VS.exe
+C:\Users\Sale\Desktop\Programi\Kucni-budzet\Kucni_budzet_VS\obj\Debug\Kucni_budzet_VS.pdb
+C:\Users\Sale\Desktop\Programi\Kucni-budzet\Kucni_budzet_VS\obj\Debug\Kucni_budzet_VS.Administrator.resources
+C:\Users\Sale\Desktop\Programi\Kucni-budzet\Kucni_budzet_VS\obj\Debug\Kucni_budzet_VS.Korisnik.resources

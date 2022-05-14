@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Kucni_budzet_VS
 {
@@ -17,12 +18,52 @@ namespace Kucni_budzet_VS
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_prijava_Click(object sender, EventArgs e)
         {
             string email = txt_email.Text;
             string lozinka = txt_lozinka.Text;
 
-            string
+            if (email == "" && lozinka == "")
+            {
+                lbl_poruka.Text = "Молимо вас да унесете ваше податке!";
+            }
+            else
+            {
+                //MessageBox.Show("Ради!");
+                int rezultat = Kontrole.Provera_Korisnika(email, lozinka);
+
+                if (rezultat == -2)
+                {
+                    lbl_poruka.Text = "Унели сте непостојећу имејл адресу!";
+                }
+                if (rezultat == -1)
+                {
+                    lbl_poruka.Text = "Погрешна лозинка!";
+                }
+
+                if (rezultat == 1)
+                {
+                    MessageBox.Show("Успешно сте се улоговали!");
+
+                    Administrator frm_administrator = new Administrator();
+                    Hide();
+                    frm_administrator.Show();
+                }
+
+                if (rezultat == 2)
+                {
+                    MessageBox.Show("Успешно сте се улоговали!");
+
+                    Korisnik frm_korisnik = new Korisnik();
+                    Hide();
+                    frm_korisnik.Show();
+                }
+            }            
+        }
+
+        private void Login_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
