@@ -93,6 +93,7 @@ SELECT * FROM Uloga;
 SELECT Osoba.email, Osoba.ime, Osoba.prezime, Uloga.naziv FROM Osoba
 JOIN Uloga ON Osoba.FK_uloga_id = Uloga.id;
 
+-- Шифарник новчаника
 SELECT Novcanik.naziv, Novcanik.stanje, Osoba.ime, Osoba.prezime FROM Novcanik
 JOIN Osoba ON Novcanik.FK_osoba_email = Osoba.email;
 
@@ -111,8 +112,10 @@ JOIN Trosak ON Promet.FK_trosak_id = Trosak.id
 JOIN Organizaciona_jedinica ON Promet.FK_organizaciona_jedinica_id = Organizaciona_jedinica.id
 JOIN Firma ON Promet.FK_firma_id = Firma.id;
 
+DELETE FROM Promet;
+
 -- Окидач
-CREATE TRIGGER Promena_stanja_Insert
+CREATE TRIGGER Promena_stanja_Insert -- Случај да је корисник отишао у минус?
 ON Promet
 AFTER INSERT
 AS
@@ -132,4 +135,26 @@ BEGIN
   UPDATE Novcanik
   SET stanje = @novo_stanje
   WHERE Novcanik.id = (SELECT FK_novcanik_id FROM inserted);
+END;
+
+CREATE TRIGGER Promena_stanja_Delete
+ON Promet
+AFTER DELETE
+AS
+BEGIN
+  DECLARE @staro_stanje DECIMAL(8, 2);
+  SET @staro_stanje = (SELECT stanje FROM Novcanik WHERE Novcanik.id = (SELECT FK_novcanik_id FROM deleted));
+  
+  DECLARE @novac DECIMAL(8, 2);
+  DECLARE @ulaz DECIMAL(8, 2);
+  SET @ulaz = (SELECT ulaz FROM deleted);
+  IF (@ulaz IS NULL) SET @novac = (SELECT kolicina FROM deleted)*(SELECT izlaz FROM deleted)
+  ELSE SET @novac = (-1)*(SELECT kolicina FROM deleted)*(SELECT ulaz FROM deleted);
+  
+  DECLARE @novo_stanje DECIMAL(8, 2);
+  SET @novo_stanje = @staro_stanje + @novac;  
+  
+  UPDATE Novcanik
+  SET stanje = @novo_stanje
+  WHERE Novcanik.id = (SELECT FK_novcanik_id FROM deleted);
 END;
