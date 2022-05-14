@@ -90,13 +90,14 @@ INSERT INTO Promet (datum, FK_novcanik_id, FK_osoba_email, FK_trosak_id, kolicin
 SELECT * FROM Uloga;
 
 -- Преглед за администратора
-SELECT Osoba.email, Osoba.ime, Osoba.prezime, Uloga.naziv FROM Osoba
+SELECT Osoba.ime, Osoba.prezime, Osoba.email, Osoba.lozinka, Uloga.naziv FROM Osoba
 JOIN Uloga ON Osoba.FK_uloga_id = Uloga.id;
 
 -- Шифарник новчаника
 SELECT Novcanik.naziv, Novcanik.stanje, Osoba.ime, Osoba.prezime FROM Novcanik
 JOIN Osoba ON Novcanik.FK_osoba_email = Osoba.email;
 
+-- Остали шифарници
 SELECT * FROM Trosak;
 
 SELECT * FROM Organizaciona_jedinica;
@@ -114,7 +115,9 @@ JOIN Firma ON Promet.FK_firma_id = Firma.id;
 
 DELETE FROM Promet;
 
--- Окидач
+-- Окидачи
+
+-- Окидач који мења стање у новчанику приликом уноса трансакције
 CREATE TRIGGER Promena_stanja_Insert -- Случај да је корисник отишао у минус?
 ON Promet
 AFTER INSERT
@@ -137,6 +140,7 @@ BEGIN
   WHERE Novcanik.id = (SELECT FK_novcanik_id FROM inserted);
 END;
 
+-- Окидач који мења стање у новчанику приликом брисања трансакције
 CREATE TRIGGER Promena_stanja_Delete
 ON Promet
 AFTER DELETE
@@ -153,6 +157,43 @@ BEGIN
   
   DECLARE @novo_stanje DECIMAL(8, 2);
   SET @novo_stanje = @staro_stanje + @novac;  
+  
+  UPDATE Novcanik
+  SET stanje = @novo_stanje
+  WHERE Novcanik.id = (SELECT FK_novcanik_id FROM deleted);
+END;
+
+-- Окидач који мења стање у новчанику приликом ажурирања трансакције (промена новчаника?)
+CREATE TRIGGER Promena_stanja_Update
+ON Promet
+AFTER UPDATE
+AS
+BEGIN
+  -- Брисање
+  DECLARE @staro_stanje DECIMAL(8, 2);
+  SET @staro_stanje = (SELECT stanje FROM Novcanik WHERE Novcanik.id = (SELECT FK_novcanik_id FROM deleted));
+  
+  DECLARE @novac DECIMAL(8, 2);
+  DECLARE @ulaz DECIMAL(8, 2);
+  SET @ulaz = (SELECT ulaz FROM deleted);
+  IF (@ulaz IS NULL) SET @novac = (SELECT kolicina FROM deleted)*(SELECT izlaz FROM deleted)
+  ELSE SET @novac = (-1)*(SELECT kolicina FROM deleted)*(SELECT ulaz FROM deleted);
+  
+  DECLARE @stanje DECIMAL(8, 2);
+  SET @stanje = @staro_stanje + @novac;  
+  
+  -- Унос
+  DECLARE @staro_stanje DECIMAL(8, 2);
+  SET @staro_stanje = (SELECT stanje FROM Novcanik WHERE Novcanik.id = (SELECT FK_novcanik_id FROM deleted));
+  
+  DECLARE @novac DECIMAL(8, 2);
+  DECLARE @ulaz DECIMAL(8, 2);
+  SET @ulaz = (SELECT ulaz FROM deleted);
+  IF (@ulaz IS NULL) SET @novac = (SELECT kolicina FROM deleted)*(SELECT izlaz FROM deleted)
+  ELSE SET @novac = (-1)*(SELECT kolicina FROM deleted)*(SELECT ulaz FROM deleted);
+  
+  DECLARE @novo_stanje DECIMAL(8, 2);
+  SET @novo_stanje = @staro_stanje + @novac;
   
   UPDATE Novcanik
   SET stanje = @novo_stanje
