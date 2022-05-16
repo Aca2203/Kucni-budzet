@@ -41,13 +41,13 @@ namespace Kucni_budzet_VS
             this.grid_promet.Name = "grid_promet";
             this.grid_promet.RowHeadersWidth = 51;
             this.grid_promet.RowTemplate.Height = 24;
-            this.grid_promet.Size = new System.Drawing.Size(1433, 348);
+            this.grid_promet.Size = new System.Drawing.Size(1237, 348);
             this.grid_promet.TabIndex = 0;
             // 
             // Administrator_transakcije
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1457, 722);
+            this.ClientSize = new System.Drawing.Size(1261, 722);
             this.Controls.Add(this.grid_promet);
             this.Name = "Administrator_transakcije";
             this.Text = "Администратор - трансакције";
