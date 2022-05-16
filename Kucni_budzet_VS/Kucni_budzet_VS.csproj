@@ -47,11 +47,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Administrator.cs">
+    <Compile Include="Administrator - podaci.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Administrator.Designer.cs">
-      <DependentUpon>Administrator.cs</DependentUpon>
+    <Compile Include="Administrator - podaci.Designer.cs">
+      <DependentUpon>Administrator - podaci.cs</DependentUpon>
     </Compile>
     <Compile Include="Kontrole.cs" />
     <Compile Include="Korisnik.cs">
@@ -60,22 +60,22 @@
     <Compile Include="Korisnik.Designer.cs">
       <DependentUpon>Korisnik.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login.cs">
+    <Compile Include="Prijava.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
+    <Compile Include="Prijava.Designer.cs">
+      <DependentUpon>Prijava.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Administrator.resx">
-      <DependentUpon>Administrator.cs</DependentUpon>
+    <EmbeddedResource Include="Administrator - podaci.resx">
+      <DependentUpon>Administrator - podaci.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Korisnik.resx">
       <DependentUpon>Korisnik.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
+    <EmbeddedResource Include="Prijava.resx">
+      <DependentUpon>Prijava.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

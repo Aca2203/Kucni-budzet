@@ -20,6 +20,16 @@ namespace Kucni_budzet_VS
         private void Administrator_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }        
+
+        private void Administrator_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void i_transakcije_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

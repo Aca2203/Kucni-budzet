@@ -1,7 +1,7 @@
 ﻿
 namespace Kucni_budzet_VS
 {
-    partial class Login
+    partial class Prijava
     {
         /// <summary>
         /// Required designer variable.

@@ -11,9 +11,9 @@ using System.Data.SqlClient;
 
 namespace Kucni_budzet_VS
 {
-    public partial class Login : Form
+    public partial class Prijava : Form
     {
-        public Login()
+        public Prijava()
         {
             InitializeComponent();
         }
