@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Kucni_budzet_VS
 {
-    public partial class Korisnik : Form
+    public partial class Korisnik_podaci : Form
     {
-        public Korisnik()
+        public Korisnik_podaci()
         {
             InitializeComponent();
         }

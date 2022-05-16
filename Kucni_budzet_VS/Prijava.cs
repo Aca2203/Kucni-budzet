@@ -47,7 +47,7 @@ namespace Kucni_budzet_VS
 
                     Program.email = txt_email.Text;                   
 
-                    Administrator frm_administrator = new Administrator();
+                    Administrator_podaci frm_administrator = new Administrator_podaci();
                     Hide();
                     frm_administrator.Show();
                 }
@@ -56,7 +56,7 @@ namespace Kucni_budzet_VS
                 {
                     MessageBox.Show("Успешно сте се улоговали!");
 
-                    Korisnik frm_korisnik = new Korisnik();
+                    Korisnik_podaci frm_korisnik = new Korisnik_podaci();
                     Hide();
                     frm_korisnik.Show();
                 }

@@ -1,7 +1,7 @@
 ﻿
 namespace Kucni_budzet_VS
 {
-    partial class Korisnik
+    partial class Korisnik_podaci
     {
         /// <summary>
         /// Required designer variable.
@@ -31,13 +31,13 @@ namespace Kucni_budzet_VS
         {
             this.SuspendLayout();
             // 
-            // Korisnik
+            // Korisnik_podaci
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "Korisnik";
-            this.Text = "Korisnik";
+            this.Name = "Korisnik_podaci";
+            this.Text = "Корисник - подаци";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Korisnik_FormClosed);
             this.ResumeLayout(false);
 

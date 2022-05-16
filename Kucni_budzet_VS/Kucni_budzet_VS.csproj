@@ -47,18 +47,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Administrator - podaci.cs">
+    <Compile Include="Administrator_podaci.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Administrator - podaci.Designer.cs">
-      <DependentUpon>Administrator - podaci.cs</DependentUpon>
+    <Compile Include="Administrator_podaci.Designer.cs">
+      <DependentUpon>Administrator_podaci.cs</DependentUpon>
     </Compile>
     <Compile Include="Kontrole.cs" />
-    <Compile Include="Korisnik.cs">
+    <Compile Include="Korisnik_podaci.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Korisnik.Designer.cs">
-      <DependentUpon>Korisnik.cs</DependentUpon>
+    <Compile Include="Korisnik_podaci.Designer.cs">
+      <DependentUpon>Korisnik_podaci.cs</DependentUpon>
     </Compile>
     <Compile Include="Prijava.cs">
       <SubType>Form</SubType>
@@ -68,11 +68,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Administrator - podaci.resx">
-      <DependentUpon>Administrator - podaci.cs</DependentUpon>
+    <EmbeddedResource Include="Administrator_podaci.resx">
+      <DependentUpon>Administrator_podaci.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Korisnik.resx">
-      <DependentUpon>Korisnik.cs</DependentUpon>
+    <EmbeddedResource Include="Korisnik_podaci.resx">
+      <DependentUpon>Korisnik_podaci.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Prijava.resx">
       <DependentUpon>Prijava.cs</DependentUpon>

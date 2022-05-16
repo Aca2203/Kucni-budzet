@@ -1,7 +1,7 @@
 ﻿
 namespace Kucni_budzet_VS
 {
-    partial class Administrator
+    partial class Administrator_podaci
     {
         /// <summary>
         /// Required designer variable.
@@ -54,6 +54,7 @@ namespace Kucni_budzet_VS
             // 
             // ms_pregledi
             // 
+            this.ms_pregledi.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ms_pregledi.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.ms_pregledi.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.i_transakcije,
@@ -61,21 +62,22 @@ namespace Kucni_budzet_VS
             this.i_sifarnici});
             this.ms_pregledi.Location = new System.Drawing.Point(0, 0);
             this.ms_pregledi.Name = "ms_pregledi";
-            this.ms_pregledi.Size = new System.Drawing.Size(1177, 28);
+            this.ms_pregledi.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
+            this.ms_pregledi.Size = new System.Drawing.Size(1292, 26);
             this.ms_pregledi.TabIndex = 0;
             this.ms_pregledi.Text = "Прегледи";
             // 
             // i_transakcije
             // 
             this.i_transakcije.Name = "i_transakcije";
-            this.i_transakcije.Size = new System.Drawing.Size(169, 24);
+            this.i_transakcije.Size = new System.Drawing.Size(169, 22);
             this.i_transakcije.Text = "Преглед трансакција";
             this.i_transakcije.Click += new System.EventHandler(this.i_transakcije_Click);
             // 
             // i_osobe
             // 
             this.i_osobe.Name = "i_osobe";
-            this.i_osobe.Size = new System.Drawing.Size(127, 24);
+            this.i_osobe.Size = new System.Drawing.Size(122, 22);
             this.i_osobe.Text = "Преглед особа";
             // 
             // i_sifarnici
@@ -86,138 +88,150 @@ namespace Kucni_budzet_VS
             this.i_organizacione_jedinice,
             this.i_firme});
             this.i_sifarnici.Name = "i_sifarnici";
-            this.i_sifarnici.Size = new System.Drawing.Size(166, 24);
+            this.i_sifarnici.Size = new System.Drawing.Size(165, 22);
             this.i_sifarnici.Text = "Преглед шифарника";
             // 
             // i_novcanici
             // 
             this.i_novcanici.Name = "i_novcanici";
-            this.i_novcanici.Size = new System.Drawing.Size(271, 26);
+            this.i_novcanici.Size = new System.Drawing.Size(267, 26);
             this.i_novcanici.Text = "Новчаници";
             // 
             // i_troskovi
             // 
             this.i_troskovi.Name = "i_troskovi";
-            this.i_troskovi.Size = new System.Drawing.Size(271, 26);
+            this.i_troskovi.Size = new System.Drawing.Size(267, 26);
             this.i_troskovi.Text = "Трошкови";
             // 
             // i_organizacione_jedinice
             // 
             this.i_organizacione_jedinice.Name = "i_organizacione_jedinice";
-            this.i_organizacione_jedinice.Size = new System.Drawing.Size(271, 26);
+            this.i_organizacione_jedinice.Size = new System.Drawing.Size(267, 26);
             this.i_organizacione_jedinice.Text = "Организационе јединице";
             // 
             // i_firme
             // 
             this.i_firme.Name = "i_firme";
-            this.i_firme.Size = new System.Drawing.Size(271, 26);
+            this.i_firme.Size = new System.Drawing.Size(267, 26);
             this.i_firme.Text = "Фирме";
             // 
             // lbl_tekst
             // 
             this.lbl_tekst.AutoSize = true;
-            this.lbl_tekst.Location = new System.Drawing.Point(35, 69);
+            this.lbl_tekst.Font = new System.Drawing.Font("Bahnschrift Light", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_tekst.Location = new System.Drawing.Point(12, 51);
             this.lbl_tekst.Name = "lbl_tekst";
-            this.lbl_tekst.Size = new System.Drawing.Size(187, 17);
+            this.lbl_tekst.Size = new System.Drawing.Size(360, 34);
             this.lbl_tekst.TabIndex = 1;
             this.lbl_tekst.Text = "Подаци о администратору:";
             // 
             // lbl_email
             // 
             this.lbl_email.AutoSize = true;
-            this.lbl_email.Location = new System.Drawing.Point(370, 224);
+            this.lbl_email.Font = new System.Drawing.Font("Bahnschrift Light", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_email.Location = new System.Drawing.Point(20, 184);
             this.lbl_email.Name = "lbl_email";
-            this.lbl_email.Size = new System.Drawing.Size(101, 17);
+            this.lbl_email.Size = new System.Drawing.Size(198, 34);
             this.lbl_email.TabIndex = 2;
             this.lbl_email.Text = "Имејл адреса:";
             // 
             // lbl_lozinka
             // 
             this.lbl_lozinka.AutoSize = true;
-            this.lbl_lozinka.Location = new System.Drawing.Point(403, 260);
+            this.lbl_lozinka.Font = new System.Drawing.Font("Bahnschrift Light", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_lozinka.Location = new System.Drawing.Point(689, 184);
             this.lbl_lozinka.Name = "lbl_lozinka";
-            this.lbl_lozinka.Size = new System.Drawing.Size(68, 17);
+            this.lbl_lozinka.Size = new System.Drawing.Size(130, 34);
             this.lbl_lozinka.TabIndex = 3;
             this.lbl_lozinka.Text = "Лозинка:";
             // 
             // lbl_ime
             // 
             this.lbl_ime.AutoSize = true;
-            this.lbl_ime.Location = new System.Drawing.Point(432, 120);
+            this.lbl_ime.Font = new System.Drawing.Font("Bahnschrift Light", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_ime.Location = new System.Drawing.Point(145, 112);
             this.lbl_ime.Name = "lbl_ime";
-            this.lbl_ime.Size = new System.Drawing.Size(39, 17);
+            this.lbl_ime.Size = new System.Drawing.Size(73, 34);
             this.lbl_ime.TabIndex = 4;
             this.lbl_ime.Text = "Име:";
             // 
             // lbl_prezime
             // 
             this.lbl_prezime.AutoSize = true;
-            this.lbl_prezime.Location = new System.Drawing.Point(401, 160);
+            this.lbl_prezime.Font = new System.Drawing.Font("Bahnschrift Light", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_prezime.Location = new System.Drawing.Point(688, 112);
             this.lbl_prezime.Name = "lbl_prezime";
-            this.lbl_prezime.Size = new System.Drawing.Size(70, 17);
+            this.lbl_prezime.Size = new System.Drawing.Size(131, 34);
             this.lbl_prezime.TabIndex = 5;
             this.lbl_prezime.Text = "Презиме:";
             // 
             // lbl_jmbg
             // 
             this.lbl_jmbg.AutoSize = true;
-            this.lbl_jmbg.Location = new System.Drawing.Point(424, 322);
+            this.lbl_jmbg.Font = new System.Drawing.Font("Bahnschrift Light", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_jmbg.Location = new System.Drawing.Point(130, 255);
             this.lbl_jmbg.Name = "lbl_jmbg";
-            this.lbl_jmbg.Size = new System.Drawing.Size(47, 17);
+            this.lbl_jmbg.Size = new System.Drawing.Size(88, 34);
             this.lbl_jmbg.TabIndex = 6;
             this.lbl_jmbg.Text = "ЈМБГ:";
             // 
             // txt_ime
             // 
-            this.txt_ime.Location = new System.Drawing.Point(487, 117);
+            this.txt_ime.Font = new System.Drawing.Font("Bahnschrift Light", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_ime.Location = new System.Drawing.Point(235, 109);
             this.txt_ime.Name = "txt_ime";
-            this.txt_ime.Size = new System.Drawing.Size(240, 22);
+            this.txt_ime.Size = new System.Drawing.Size(435, 40);
             this.txt_ime.TabIndex = 7;
             // 
             // txt_prezime
             // 
-            this.txt_prezime.Location = new System.Drawing.Point(487, 155);
+            this.txt_prezime.Font = new System.Drawing.Font("Bahnschrift Light", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_prezime.Location = new System.Drawing.Point(838, 109);
             this.txt_prezime.Name = "txt_prezime";
-            this.txt_prezime.Size = new System.Drawing.Size(240, 22);
+            this.txt_prezime.Size = new System.Drawing.Size(435, 40);
             this.txt_prezime.TabIndex = 8;
             // 
             // txt_email
             // 
             this.txt_email.Enabled = false;
-            this.txt_email.Location = new System.Drawing.Point(487, 221);
+            this.txt_email.Font = new System.Drawing.Font("Bahnschrift Light", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_email.Location = new System.Drawing.Point(235, 181);
             this.txt_email.Name = "txt_email";
-            this.txt_email.Size = new System.Drawing.Size(240, 22);
+            this.txt_email.Size = new System.Drawing.Size(435, 40);
             this.txt_email.TabIndex = 9;
             // 
             // txt_lozinka
             // 
-            this.txt_lozinka.Location = new System.Drawing.Point(487, 257);
+            this.txt_lozinka.Font = new System.Drawing.Font("Bahnschrift Light", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_lozinka.Location = new System.Drawing.Point(838, 181);
             this.txt_lozinka.Name = "txt_lozinka";
-            this.txt_lozinka.Size = new System.Drawing.Size(240, 22);
+            this.txt_lozinka.Size = new System.Drawing.Size(435, 40);
             this.txt_lozinka.TabIndex = 10;
             // 
             // txt_jmbg
             // 
-            this.txt_jmbg.Location = new System.Drawing.Point(487, 319);
+            this.txt_jmbg.Font = new System.Drawing.Font("Bahnschrift Light", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_jmbg.Location = new System.Drawing.Point(235, 252);
             this.txt_jmbg.Name = "txt_jmbg";
-            this.txt_jmbg.Size = new System.Drawing.Size(240, 22);
+            this.txt_jmbg.Size = new System.Drawing.Size(435, 40);
             this.txt_jmbg.TabIndex = 11;
             // 
             // btn_izmeni
             // 
-            this.btn_izmeni.Location = new System.Drawing.Point(497, 388);
+            this.btn_izmeni.Font = new System.Drawing.Font("Bahnschrift Light", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_izmeni.Location = new System.Drawing.Point(861, 239);
             this.btn_izmeni.Name = "btn_izmeni";
-            this.btn_izmeni.Size = new System.Drawing.Size(148, 46);
+            this.btn_izmeni.Size = new System.Drawing.Size(292, 64);
             this.btn_izmeni.TabIndex = 12;
             this.btn_izmeni.Text = "Измени податке";
             this.btn_izmeni.UseVisualStyleBackColor = true;
             this.btn_izmeni.Click += new System.EventHandler(this.btn_izmeni_Click);
             // 
-            // Administrator
+            // Administrator_podaci
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1177, 578);
+            this.ClientSize = new System.Drawing.Size(1292, 344);
             this.Controls.Add(this.btn_izmeni);
             this.Controls.Add(this.txt_jmbg);
             this.Controls.Add(this.txt_lozinka);
@@ -232,7 +246,7 @@ namespace Kucni_budzet_VS
             this.Controls.Add(this.lbl_tekst);
             this.Controls.Add(this.ms_pregledi);
             this.MainMenuStrip = this.ms_pregledi;
-            this.Name = "Administrator";
+            this.Name = "Administrator_podaci";
             this.Text = "Администратор - подаци";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Administrator_FormClosed);
             this.Load += new System.EventHandler(this.Administrator_Load);

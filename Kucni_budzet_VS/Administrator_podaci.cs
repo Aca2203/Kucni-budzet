@@ -11,11 +11,11 @@ using System.Data.SqlClient;
 
 namespace Kucni_budzet_VS
 {
-    public partial class Administrator : Form
+    public partial class Administrator_podaci : Form
     {
         SqlConnection veza = Kontrole.Povezi();
 
-        public Administrator()
+        public Administrator_podaci()
         {
             InitializeComponent();
         }
