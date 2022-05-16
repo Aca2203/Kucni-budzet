@@ -199,3 +199,38 @@ BEGIN
   SET stanje = @novo_stanje
   WHERE Novcanik.id = (SELECT FK_novcanik_id FROM deleted);
 END;
+
+-- Стор процедуре
+
+CREATE PROCEDURE Provera_Korisnika
+@email VARCHAR(70),
+@lozinka VARCHAR(30)
+AS
+SET LOCK_TIMEOUT 3000;
+BEGIN TRY
+  IF EXISTS(SELECT TOP 1 email FROM Osoba
+  WHERE email = @email)
+  BEGIN
+    IF EXISTS(SELECT TOP 1 email FROM Osoba
+    WHERE email = @email AND lozinka = @lozinka)
+    BEGIN
+      DECLARE @uloga INT;
+      SET @uloga = (SELECT TOP 1 FK_uloga_id FROM Osoba
+      WHERE email = @email AND lozinka = @lozinka);
+  
+      IF (@uloga = 1)
+      BEGIN
+        RETURN 1;
+      END
+      IF (@uloga = 2)
+      BEGIN
+        RETURN 2;
+      END;
+    END;
+    RETURN -1;
+  END;
+  RETURN -2;
+END TRY
+BEGIN CATCH
+  RETURN @@ERROR;
+END CATCH;
