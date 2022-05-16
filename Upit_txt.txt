@@ -60,6 +60,7 @@ INSERT INTO Uloga (naziv) VALUES (N'Корисник');
 INSERT INTO Osoba (email, lozinka, ime, prezime, jmbg, FK_uloga_id) VALUES ('aleksandarstefanovic@KB_A.rs', 'coamafija1312', N'Александар', N'Стефановић', '2210003710256', 1);
 INSERT INTO Osoba (email, lozinka, ime, prezime, jmbg, FK_uloga_id) VALUES ('tanjamarkovic@KB_K.rs', 'tanja123', N'Тања', N'Марковић', '1712001289564', 2);
 INSERT INTO Osoba (email, lozinka, ime, prezime, jmbg, FK_uloga_id) VALUES ('mirkolazic@KB_K.rs', 'miki97', N'Мирко', N'Лазић', NULL, 2);
+INSERT INTO Osoba (email, lozinka, ime, prezime, jmbg, FK_uloga_id) VALUES ('mirkolazic@KB_A.rs', 'miki97', N'Мирко', N'Лазић', NULL, 1);
 
 INSERT INTO Novcanik (naziv, stanje, FK_osoba_email) VALUES (N'Џеп', 0, 'aleksandarstefanovic@KB_A.rs'); -- подразумевани новчаник
 INSERT INTO Novcanik (naziv, stanje, FK_osoba_email) VALUES (N'Фиока', 0, 'aleksandarstefanovic@KB_A.rs');
@@ -111,7 +112,8 @@ JOIN Osoba ON Promet.FK_osoba_email = Osoba.email
 JOIN Novcanik ON Promet.FK_novcanik_id = Novcanik.id
 JOIN Trosak ON Promet.FK_trosak_id = Trosak.id
 JOIN Organizaciona_jedinica ON Promet.FK_organizaciona_jedinica_id = Organizaciona_jedinica.id
-JOIN Firma ON Promet.FK_firma_id = Firma.id;
+JOIN Firma ON Promet.FK_firma_id = Firma.id
+ORDER BY datum;
 
 DELETE FROM Promet;
 

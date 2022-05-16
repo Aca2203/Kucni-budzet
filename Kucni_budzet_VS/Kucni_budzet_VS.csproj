@@ -53,6 +53,12 @@
     <Compile Include="Administrator_podaci.Designer.cs">
       <DependentUpon>Administrator_podaci.cs</DependentUpon>
     </Compile>
+    <Compile Include="Administrator_transakcije.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrator_transakcije.Designer.cs">
+      <DependentUpon>Administrator_transakcije.cs</DependentUpon>
+    </Compile>
     <Compile Include="Kontrole.cs" />
     <Compile Include="Korisnik_podaci.cs">
       <SubType>Form</SubType>
@@ -70,6 +76,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Administrator_podaci.resx">
       <DependentUpon>Administrator_podaci.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administrator_transakcije.resx">
+      <DependentUpon>Administrator_transakcije.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Korisnik_podaci.resx">
       <DependentUpon>Korisnik_podaci.cs</DependentUpon>

@@ -10,3 +10,4 @@ C:\Users\Sale\Desktop\Programi\Kucni-budzet\Kucni_budzet_VS\obj\Debug\Kucni_budz
 C:\Users\Sale\Desktop\Programi\Kucni-budzet\Kucni_budzet_VS\obj\Debug\Kucni_budzet_VS.Prijava.resources
 C:\Users\Sale\Desktop\Programi\Kucni-budzet\Kucni_budzet_VS\obj\Debug\Kucni_budzet_VS.Administrator_podaci.resources
 C:\Users\Sale\Desktop\Programi\Kucni-budzet\Kucni_budzet_VS\obj\Debug\Kucni_budzet_VS.Korisnik_podaci.resources
+C:\Users\Sale\Desktop\Programi\Kucni-budzet\Kucni_budzet_VS\obj\Debug\Kucni_budzet_VS.Administrator_transakcije.resources
