@@ -40,41 +40,46 @@ namespace Kucni_budzet_VS
             // lbl_email
             // 
             this.lbl_email.AutoSize = true;
-            this.lbl_email.Location = new System.Drawing.Point(219, 132);
+            this.lbl_email.Font = new System.Drawing.Font("Bahnschrift Light", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_email.Location = new System.Drawing.Point(33, 60);
             this.lbl_email.Name = "lbl_email";
-            this.lbl_email.Size = new System.Drawing.Size(101, 17);
+            this.lbl_email.Size = new System.Drawing.Size(198, 34);
             this.lbl_email.TabIndex = 0;
             this.lbl_email.Text = "Имејл адреса:";
             // 
             // lbl_lozinka
             // 
             this.lbl_lozinka.AutoSize = true;
-            this.lbl_lozinka.Location = new System.Drawing.Point(252, 181);
+            this.lbl_lozinka.Font = new System.Drawing.Font("Bahnschrift Light", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_lozinka.Location = new System.Drawing.Point(101, 116);
             this.lbl_lozinka.Name = "lbl_lozinka";
-            this.lbl_lozinka.Size = new System.Drawing.Size(68, 17);
+            this.lbl_lozinka.Size = new System.Drawing.Size(130, 34);
             this.lbl_lozinka.TabIndex = 1;
             this.lbl_lozinka.Text = "Лозинка:";
             // 
             // txt_email
             // 
-            this.txt_email.Location = new System.Drawing.Point(353, 132);
+            this.txt_email.Font = new System.Drawing.Font("Bahnschrift Light", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_email.Location = new System.Drawing.Point(251, 57);
             this.txt_email.Name = "txt_email";
-            this.txt_email.Size = new System.Drawing.Size(265, 22);
+            this.txt_email.Size = new System.Drawing.Size(509, 40);
             this.txt_email.TabIndex = 2;
             // 
             // txt_lozinka
             // 
-            this.txt_lozinka.Location = new System.Drawing.Point(353, 178);
+            this.txt_lozinka.Font = new System.Drawing.Font("Bahnschrift Light", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_lozinka.Location = new System.Drawing.Point(251, 113);
             this.txt_lozinka.Name = "txt_lozinka";
             this.txt_lozinka.PasswordChar = '*';
-            this.txt_lozinka.Size = new System.Drawing.Size(265, 22);
+            this.txt_lozinka.Size = new System.Drawing.Size(509, 40);
             this.txt_lozinka.TabIndex = 3;
             // 
             // btn_prijava
             // 
-            this.btn_prijava.Location = new System.Drawing.Point(339, 232);
+            this.btn_prijava.Font = new System.Drawing.Font("Bahnschrift Light", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_prijava.Location = new System.Drawing.Point(275, 196);
             this.btn_prijava.Name = "btn_prijava";
-            this.btn_prijava.Size = new System.Drawing.Size(152, 42);
+            this.btn_prijava.Size = new System.Drawing.Size(275, 59);
             this.btn_prijava.TabIndex = 4;
             this.btn_prijava.Text = "Пријави се!";
             this.btn_prijava.UseVisualStyleBackColor = true;
@@ -83,16 +88,18 @@ namespace Kucni_budzet_VS
             // lbl_poruka
             // 
             this.lbl_poruka.AutoSize = true;
-            this.lbl_poruka.Location = new System.Drawing.Point(353, 335);
+            this.lbl_poruka.Font = new System.Drawing.Font("Bahnschrift Light", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_poruka.ForeColor = System.Drawing.Color.Red;
+            this.lbl_poruka.Location = new System.Drawing.Point(35, 280);
             this.lbl_poruka.Name = "lbl_poruka";
-            this.lbl_poruka.Size = new System.Drawing.Size(0, 17);
+            this.lbl_poruka.Size = new System.Drawing.Size(0, 21);
             this.lbl_poruka.TabIndex = 5;
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(813, 329);
             this.Controls.Add(this.lbl_poruka);
             this.Controls.Add(this.btn_prijava);
             this.Controls.Add(this.txt_lozinka);
