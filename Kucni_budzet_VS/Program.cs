@@ -7,7 +7,10 @@ using System.Windows.Forms;
 namespace Kucni_budzet_VS
 {
     static class Program
-    {
+    {        
+        static public string email = "";
+        static public string lozinka = "";        
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -16,7 +19,7 @@ namespace Kucni_budzet_VS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Administrator());
+            Application.Run(new Prijava());
         }
     }
 }
