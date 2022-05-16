@@ -125,7 +125,7 @@ namespace Kucni_budzet_VS
             // lbl_email
             // 
             this.lbl_email.AutoSize = true;
-            this.lbl_email.Location = new System.Drawing.Point(370, 241);
+            this.lbl_email.Location = new System.Drawing.Point(370, 224);
             this.lbl_email.Name = "lbl_email";
             this.lbl_email.Size = new System.Drawing.Size(101, 17);
             this.lbl_email.TabIndex = 2;
@@ -134,7 +134,7 @@ namespace Kucni_budzet_VS
             // lbl_lozinka
             // 
             this.lbl_lozinka.AutoSize = true;
-            this.lbl_lozinka.Location = new System.Drawing.Point(403, 277);
+            this.lbl_lozinka.Location = new System.Drawing.Point(403, 260);
             this.lbl_lozinka.Name = "lbl_lozinka";
             this.lbl_lozinka.Size = new System.Drawing.Size(68, 17);
             this.lbl_lozinka.TabIndex = 3;
@@ -143,7 +143,7 @@ namespace Kucni_budzet_VS
             // lbl_ime
             // 
             this.lbl_ime.AutoSize = true;
-            this.lbl_ime.Location = new System.Drawing.Point(432, 137);
+            this.lbl_ime.Location = new System.Drawing.Point(432, 120);
             this.lbl_ime.Name = "lbl_ime";
             this.lbl_ime.Size = new System.Drawing.Size(39, 17);
             this.lbl_ime.TabIndex = 4;
@@ -152,7 +152,7 @@ namespace Kucni_budzet_VS
             // lbl_prezime
             // 
             this.lbl_prezime.AutoSize = true;
-            this.lbl_prezime.Location = new System.Drawing.Point(401, 177);
+            this.lbl_prezime.Location = new System.Drawing.Point(401, 160);
             this.lbl_prezime.Name = "lbl_prezime";
             this.lbl_prezime.Size = new System.Drawing.Size(70, 17);
             this.lbl_prezime.TabIndex = 5;
@@ -161,7 +161,7 @@ namespace Kucni_budzet_VS
             // lbl_jmbg
             // 
             this.lbl_jmbg.AutoSize = true;
-            this.lbl_jmbg.Location = new System.Drawing.Point(424, 339);
+            this.lbl_jmbg.Location = new System.Drawing.Point(424, 322);
             this.lbl_jmbg.Name = "lbl_jmbg";
             this.lbl_jmbg.Size = new System.Drawing.Size(47, 17);
             this.lbl_jmbg.TabIndex = 6;
@@ -169,14 +169,14 @@ namespace Kucni_budzet_VS
             // 
             // txt_ime
             // 
-            this.txt_ime.Location = new System.Drawing.Point(487, 134);
+            this.txt_ime.Location = new System.Drawing.Point(487, 117);
             this.txt_ime.Name = "txt_ime";
             this.txt_ime.Size = new System.Drawing.Size(240, 22);
             this.txt_ime.TabIndex = 7;
             // 
             // txt_prezime
             // 
-            this.txt_prezime.Location = new System.Drawing.Point(487, 172);
+            this.txt_prezime.Location = new System.Drawing.Point(487, 155);
             this.txt_prezime.Name = "txt_prezime";
             this.txt_prezime.Size = new System.Drawing.Size(240, 22);
             this.txt_prezime.TabIndex = 8;
@@ -184,33 +184,34 @@ namespace Kucni_budzet_VS
             // txt_email
             // 
             this.txt_email.Enabled = false;
-            this.txt_email.Location = new System.Drawing.Point(487, 238);
+            this.txt_email.Location = new System.Drawing.Point(487, 221);
             this.txt_email.Name = "txt_email";
             this.txt_email.Size = new System.Drawing.Size(240, 22);
             this.txt_email.TabIndex = 9;
             // 
             // txt_lozinka
             // 
-            this.txt_lozinka.Location = new System.Drawing.Point(487, 274);
+            this.txt_lozinka.Location = new System.Drawing.Point(487, 257);
             this.txt_lozinka.Name = "txt_lozinka";
             this.txt_lozinka.Size = new System.Drawing.Size(240, 22);
             this.txt_lozinka.TabIndex = 10;
             // 
             // txt_jmbg
             // 
-            this.txt_jmbg.Location = new System.Drawing.Point(487, 336);
+            this.txt_jmbg.Location = new System.Drawing.Point(487, 319);
             this.txt_jmbg.Name = "txt_jmbg";
             this.txt_jmbg.Size = new System.Drawing.Size(240, 22);
             this.txt_jmbg.TabIndex = 11;
             // 
             // btn_izmeni
             // 
-            this.btn_izmeni.Location = new System.Drawing.Point(497, 405);
+            this.btn_izmeni.Location = new System.Drawing.Point(497, 388);
             this.btn_izmeni.Name = "btn_izmeni";
             this.btn_izmeni.Size = new System.Drawing.Size(148, 46);
             this.btn_izmeni.TabIndex = 12;
             this.btn_izmeni.Text = "Измени податке";
             this.btn_izmeni.UseVisualStyleBackColor = true;
+            this.btn_izmeni.Click += new System.EventHandler(this.btn_izmeni_Click);
             // 
             // Administrator
             // 

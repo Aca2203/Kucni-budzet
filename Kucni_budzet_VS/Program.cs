@@ -8,8 +8,7 @@ namespace Kucni_budzet_VS
 {
     static class Program
     {        
-        static public string email = "";
-        static public string lozinka = "";        
+        static public string email = "";        
 
         /// <summary>
         /// The main entry point for the application.

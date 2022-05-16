@@ -45,8 +45,7 @@ namespace Kucni_budzet_VS
                 {
                     MessageBox.Show("Успешно сте се улоговали!");
 
-                    Program.email = txt_email.Text;
-                    Program.lozinka = txt_lozinka.Text;
+                    Program.email = txt_email.Text;                   
 
                     Administrator frm_administrator = new Administrator();
                     Hide();
