@@ -35,7 +35,7 @@ namespace Kucni_budzet_VS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1189, 688);
             this.Name = "Korisnik_podaci";
             this.Text = "Корисник - подаци";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Korisnik_FormClosed);
