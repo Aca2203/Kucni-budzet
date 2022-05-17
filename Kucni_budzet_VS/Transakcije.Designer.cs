@@ -33,7 +33,7 @@ namespace Kucni_budzet_VS
             this.lbl_ime_prezime = new System.Windows.Forms.Label();
             this.txt_email = new System.Windows.Forms.TextBox();
             this.txt_ime_prezime = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.grid_promet = new System.Windows.Forms.DataGridView();
             this.lbl_linija = new System.Windows.Forms.Label();
             this.cmb_datum = new System.Windows.Forms.DateTimePicker();
             this.lbl_datum = new System.Windows.Forms.Label();
@@ -56,7 +56,7 @@ namespace Kucni_budzet_VS
             this.btn_dodaj = new System.Windows.Forms.Button();
             this.btn_izmeni = new System.Windows.Forms.Button();
             this.btn_obrisi = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_promet)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_email
@@ -97,15 +97,16 @@ namespace Kucni_budzet_VS
             this.txt_ime_prezime.Size = new System.Drawing.Size(441, 40);
             this.txt_ime_prezime.TabIndex = 3;
             // 
-            // dataGridView1
+            // grid_promet
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 393);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1344, 369);
-            this.dataGridView1.TabIndex = 4;
+            this.grid_promet.AllowUserToAddRows = false;
+            this.grid_promet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grid_promet.Location = new System.Drawing.Point(12, 393);
+            this.grid_promet.Name = "grid_promet";
+            this.grid_promet.RowHeadersWidth = 51;
+            this.grid_promet.RowTemplate.Height = 24;
+            this.grid_promet.Size = new System.Drawing.Size(1344, 369);
+            this.grid_promet.TabIndex = 4;
             // 
             // lbl_linija
             // 
@@ -339,15 +340,15 @@ namespace Kucni_budzet_VS
             this.Controls.Add(this.lbl_datum);
             this.Controls.Add(this.cmb_datum);
             this.Controls.Add(this.lbl_linija);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.grid_promet);
             this.Controls.Add(this.txt_ime_prezime);
             this.Controls.Add(this.txt_email);
             this.Controls.Add(this.lbl_ime_prezime);
             this.Controls.Add(this.lbl_email);
             this.Name = "Transakcije";
-            this.Text = "Transakcije";
+            this.Text = "Трансакције";
             this.Load += new System.EventHandler(this.Transakcije_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_promet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -359,7 +360,7 @@ namespace Kucni_budzet_VS
         private System.Windows.Forms.Label lbl_ime_prezime;
         private System.Windows.Forms.TextBox txt_email;
         private System.Windows.Forms.TextBox txt_ime_prezime;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView grid_promet;
         private System.Windows.Forms.Label lbl_linija;
         private System.Windows.Forms.DateTimePicker cmb_datum;
         private System.Windows.Forms.Label lbl_datum;
