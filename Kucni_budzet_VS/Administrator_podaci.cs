@@ -81,7 +81,7 @@ namespace Kucni_budzet_VS
 
         private void i_transakcije_Click(object sender, EventArgs e)
         {
-            Administrator_transakcije forma = new Administrator_transakcije();
+            Transakcije forma = new Transakcije();
             forma.Show();
         }
     }

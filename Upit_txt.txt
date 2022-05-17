@@ -91,8 +91,18 @@ INSERT INTO Promet (datum, FK_novcanik_id, FK_osoba_email, FK_trosak_id, kolicin
 SELECT * FROM Uloga;
 
 -- Преглед за администратора
-SELECT Osoba.ime, Osoba.prezime, Osoba.email, Osoba.lozinka, Uloga.naziv FROM Osoba
+SELECT Osoba.ime, Osoba.prezime, Osoba.email, Osoba.lozinka, Osoba.jmbg, Uloga.naziv FROM Osoba
 JOIN Uloga ON Osoba.FK_uloga_id = Uloga.id;
+
+-- Укупно стање
+SELECT SUM(stanje)
+FROM Novcanik
+JOIN Osoba ON Novcanik.FK_osoba_email = Osoba.email
+WHERE Osoba.email = 'mirkolazic@KB_A.rs';
+
+UPDATE Novcanik
+SET stanje = 200
+WHERE id = 2;
 
 -- Шифарник новчаника
 SELECT Novcanik.naziv, Novcanik.stanje, Osoba.ime, Osoba.prezime FROM Novcanik
@@ -106,7 +116,7 @@ SELECT * FROM Organizaciona_jedinica;
 SELECT * FROM Firma;
 
 -- Главна форма
-SELECT Promet.datum AS 'Датум', Osoba.email AS 'Имејл адреса', Osoba.ime + ' ' + Osoba.prezime AS 'Име и презиме особе', Novcanik.naziv AS 'Новчаник', Trosak.naziv AS 'Трошак', Promet.kolicina AS 'Количина', Organizaciona_jedinica.naziv AS 'Организациона јединица', Firma.naziv AS 'Фирма', Promet.ulaz AS 'Улаз', Promet.izlaz AS 'Излаз', Promet.opis AS 'Опис'
+SELECT Promet.datum AS 'Датум и време', Osoba.email AS 'Имејл адреса', Osoba.ime + ' ' + Osoba.prezime AS 'Име и презиме особе', Novcanik.naziv AS 'Новчаник', Trosak.naziv AS 'Трошак', Promet.kolicina AS 'Количина', Organizaciona_jedinica.naziv AS 'Организациона јединица', Firma.naziv AS 'Фирма', Promet.ulaz AS 'Улаз', Promet.izlaz AS 'Излаз', Promet.opis AS 'Опис'
 FROM Promet
 JOIN Osoba ON Promet.FK_osoba_email = Osoba.email
 JOIN Novcanik ON Promet.FK_novcanik_id = Novcanik.id
@@ -116,6 +126,14 @@ JOIN Firma ON Promet.FK_firma_id = Firma.id
 ORDER BY datum;
 
 DELETE FROM Promet;
+
+-- Функција
+CREATE FUNCTION UzmiVreme()
+RETURNS TIME
+AS
+BEGIN
+  RETURN CAST(GETDATE() AS TIME);
+END;
 
 -- Окидачи
 

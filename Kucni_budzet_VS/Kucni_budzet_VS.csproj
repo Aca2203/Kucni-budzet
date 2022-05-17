@@ -53,12 +53,6 @@
     <Compile Include="Administrator_podaci.Designer.cs">
       <DependentUpon>Administrator_podaci.cs</DependentUpon>
     </Compile>
-    <Compile Include="Administrator_transakcije.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Administrator_transakcije.Designer.cs">
-      <DependentUpon>Administrator_transakcije.cs</DependentUpon>
-    </Compile>
     <Compile Include="Kontrole.cs" />
     <Compile Include="Korisnik_podaci.cs">
       <SubType>Form</SubType>
@@ -74,11 +68,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Transakcije.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transakcije.Designer.cs">
+      <DependentUpon>Transakcije.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Administrator_podaci.resx">
       <DependentUpon>Administrator_podaci.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Administrator_transakcije.resx">
-      <DependentUpon>Administrator_transakcije.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Korisnik_podaci.resx">
       <DependentUpon>Korisnik_podaci.cs</DependentUpon>
@@ -95,6 +92,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Transakcije.resx">
+      <DependentUpon>Transakcije.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

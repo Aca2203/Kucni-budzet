@@ -33,10 +33,6 @@ namespace Kucni_budzet_VS
             this.i_transakcije = new System.Windows.Forms.ToolStripMenuItem();
             this.i_osobe = new System.Windows.Forms.ToolStripMenuItem();
             this.i_sifarnici = new System.Windows.Forms.ToolStripMenuItem();
-            this.i_novcanici = new System.Windows.Forms.ToolStripMenuItem();
-            this.i_troskovi = new System.Windows.Forms.ToolStripMenuItem();
-            this.i_organizacione_jedinice = new System.Windows.Forms.ToolStripMenuItem();
-            this.i_firme = new System.Windows.Forms.ToolStripMenuItem();
             this.lbl_tekst = new System.Windows.Forms.Label();
             this.lbl_email = new System.Windows.Forms.Label();
             this.lbl_lozinka = new System.Windows.Forms.Label();
@@ -51,6 +47,7 @@ namespace Kucni_budzet_VS
             this.btn_izmeni = new System.Windows.Forms.Button();
             this.lbl_stanje = new System.Windows.Forms.Label();
             this.txt_stanje = new System.Windows.Forms.TextBox();
+            this.прегледНовчаникаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ms_pregledi.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,6 +57,7 @@ namespace Kucni_budzet_VS
             this.ms_pregledi.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.ms_pregledi.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.i_transakcije,
+            this.прегледНовчаникаToolStripMenuItem,
             this.i_osobe,
             this.i_sifarnici});
             this.ms_pregledi.Location = new System.Drawing.Point(0, 0);
@@ -83,38 +81,9 @@ namespace Kucni_budzet_VS
             // 
             // i_sifarnici
             // 
-            this.i_sifarnici.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.i_novcanici,
-            this.i_troskovi,
-            this.i_organizacione_jedinice,
-            this.i_firme});
             this.i_sifarnici.Name = "i_sifarnici";
             this.i_sifarnici.Size = new System.Drawing.Size(165, 22);
             this.i_sifarnici.Text = "Преглед шифарника";
-            // 
-            // i_novcanici
-            // 
-            this.i_novcanici.Name = "i_novcanici";
-            this.i_novcanici.Size = new System.Drawing.Size(267, 26);
-            this.i_novcanici.Text = "Новчаници";
-            // 
-            // i_troskovi
-            // 
-            this.i_troskovi.Name = "i_troskovi";
-            this.i_troskovi.Size = new System.Drawing.Size(267, 26);
-            this.i_troskovi.Text = "Трошкови";
-            // 
-            // i_organizacione_jedinice
-            // 
-            this.i_organizacione_jedinice.Name = "i_organizacione_jedinice";
-            this.i_organizacione_jedinice.Size = new System.Drawing.Size(267, 26);
-            this.i_organizacione_jedinice.Text = "Организационе јединице";
-            // 
-            // i_firme
-            // 
-            this.i_firme.Name = "i_firme";
-            this.i_firme.Size = new System.Drawing.Size(267, 26);
-            this.i_firme.Text = "Фирме";
             // 
             // lbl_tekst
             // 
@@ -247,11 +216,17 @@ namespace Kucni_budzet_VS
             this.txt_stanje.Size = new System.Drawing.Size(220, 40);
             this.txt_stanje.TabIndex = 14;
             // 
+            // прегледНовчаникаToolStripMenuItem
+            // 
+            this.прегледНовчаникаToolStripMenuItem.Name = "прегледНовчаникаToolStripMenuItem";
+            this.прегледНовчаникаToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.прегледНовчаникаToolStripMenuItem.Text = "Преглед новчаника";
+            // 
             // Administrator_podaci
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1292, 500);
+            this.ClientSize = new System.Drawing.Size(1292, 453);
             this.Controls.Add(this.txt_stanje);
             this.Controls.Add(this.lbl_stanje);
             this.Controls.Add(this.btn_izmeni);
@@ -291,10 +266,6 @@ namespace Kucni_budzet_VS
         private System.Windows.Forms.Label lbl_prezime;
         private System.Windows.Forms.Label lbl_jmbg;
         private System.Windows.Forms.ToolStripMenuItem i_sifarnici;
-        private System.Windows.Forms.ToolStripMenuItem i_novcanici;
-        private System.Windows.Forms.ToolStripMenuItem i_troskovi;
-        private System.Windows.Forms.ToolStripMenuItem i_organizacione_jedinice;
-        private System.Windows.Forms.ToolStripMenuItem i_firme;
         private System.Windows.Forms.TextBox txt_ime;
         private System.Windows.Forms.TextBox txt_prezime;
         private System.Windows.Forms.TextBox txt_email;
@@ -303,5 +274,6 @@ namespace Kucni_budzet_VS
         private System.Windows.Forms.Button btn_izmeni;
         private System.Windows.Forms.Label lbl_stanje;
         private System.Windows.Forms.TextBox txt_stanje;
+        private System.Windows.Forms.ToolStripMenuItem прегледНовчаникаToolStripMenuItem;
     }
 }
