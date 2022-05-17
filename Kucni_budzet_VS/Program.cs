@@ -8,7 +8,7 @@ namespace Kucni_budzet_VS
 {
     static class Program
     {        
-        static public string email = "";        
+        static public string email = "prvi@KB_A.rs";        
 
         /// <summary>
         /// The main entry point for the application.
@@ -18,7 +18,7 @@ namespace Kucni_budzet_VS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Prijava());
+            Application.Run(new Transakcije());
         }
     }
 }

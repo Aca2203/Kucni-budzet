@@ -22,7 +22,7 @@ namespace Kucni_budzet_VS
 
         private void Transakcije_Load(object sender, EventArgs e)
         {
-            txt_popuni();
+            txt_popuni();            
         }
 
         private void txt_popuni()

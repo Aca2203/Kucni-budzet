@@ -33,6 +33,30 @@ namespace Kucni_budzet_VS
             this.lbl_ime_prezime = new System.Windows.Forms.Label();
             this.txt_email = new System.Windows.Forms.TextBox();
             this.txt_ime_prezime = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.lbl_linija = new System.Windows.Forms.Label();
+            this.cmb_datum = new System.Windows.Forms.DateTimePicker();
+            this.lbl_datum = new System.Windows.Forms.Label();
+            this.lbl_novcanik = new System.Windows.Forms.Label();
+            this.cmb_novcanik = new System.Windows.Forms.ComboBox();
+            this.lbl_ulaz = new System.Windows.Forms.Label();
+            this.lbl_izlaz = new System.Windows.Forms.Label();
+            this.lbl_kolicina = new System.Windows.Forms.Label();
+            this.txt_ulaz = new System.Windows.Forms.TextBox();
+            this.txt_izlaz = new System.Windows.Forms.TextBox();
+            this.txt_kolicina = new System.Windows.Forms.TextBox();
+            this.lbl_trosak = new System.Windows.Forms.Label();
+            this.lbl_org = new System.Windows.Forms.Label();
+            this.lbl_firma = new System.Windows.Forms.Label();
+            this.cmb_org = new System.Windows.Forms.ComboBox();
+            this.cmb_trosak = new System.Windows.Forms.ComboBox();
+            this.cmb_firma = new System.Windows.Forms.ComboBox();
+            this.lbl_opis = new System.Windows.Forms.Label();
+            this.txt_opis = new System.Windows.Forms.TextBox();
+            this.btn_dodaj = new System.Windows.Forms.Button();
+            this.btn_izmeni = new System.Windows.Forms.Button();
+            this.btn_obrisi = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_email
@@ -73,11 +97,249 @@ namespace Kucni_budzet_VS
             this.txt_ime_prezime.Size = new System.Drawing.Size(441, 40);
             this.txt_ime_prezime.TabIndex = 3;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 393);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(1344, 369);
+            this.dataGridView1.TabIndex = 4;
+            // 
+            // lbl_linija
+            // 
+            this.lbl_linija.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lbl_linija.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lbl_linija.Location = new System.Drawing.Point(12, 134);
+            this.lbl_linija.Name = "lbl_linija";
+            this.lbl_linija.Size = new System.Drawing.Size(1329, 2);
+            this.lbl_linija.TabIndex = 5;
+            // 
+            // cmb_datum
+            // 
+            this.cmb_datum.Font = new System.Drawing.Font("Bahnschrift Light", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_datum.Location = new System.Drawing.Point(18, 210);
+            this.cmb_datum.Name = "cmb_datum";
+            this.cmb_datum.Size = new System.Drawing.Size(460, 40);
+            this.cmb_datum.TabIndex = 6;
+            // 
+            // lbl_datum
+            // 
+            this.lbl_datum.AutoSize = true;
+            this.lbl_datum.Font = new System.Drawing.Font("Bahnschrift Light", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_datum.Location = new System.Drawing.Point(199, 161);
+            this.lbl_datum.Name = "lbl_datum";
+            this.lbl_datum.Size = new System.Drawing.Size(101, 34);
+            this.lbl_datum.TabIndex = 7;
+            this.lbl_datum.Text = "Датум:";
+            // 
+            // lbl_novcanik
+            // 
+            this.lbl_novcanik.AutoSize = true;
+            this.lbl_novcanik.Font = new System.Drawing.Font("Bahnschrift Light", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_novcanik.Location = new System.Drawing.Point(551, 161);
+            this.lbl_novcanik.Name = "lbl_novcanik";
+            this.lbl_novcanik.Size = new System.Drawing.Size(147, 34);
+            this.lbl_novcanik.TabIndex = 8;
+            this.lbl_novcanik.Text = "Новчаник:";
+            // 
+            // cmb_novcanik
+            // 
+            this.cmb_novcanik.Font = new System.Drawing.Font("Bahnschrift Light", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_novcanik.FormattingEnabled = true;
+            this.cmb_novcanik.Location = new System.Drawing.Point(511, 210);
+            this.cmb_novcanik.Name = "cmb_novcanik";
+            this.cmb_novcanik.Size = new System.Drawing.Size(233, 41);
+            this.cmb_novcanik.TabIndex = 9;
+            // 
+            // lbl_ulaz
+            // 
+            this.lbl_ulaz.AutoSize = true;
+            this.lbl_ulaz.Font = new System.Drawing.Font("Bahnschrift Light", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_ulaz.Location = new System.Drawing.Point(816, 161);
+            this.lbl_ulaz.Name = "lbl_ulaz";
+            this.lbl_ulaz.Size = new System.Drawing.Size(81, 34);
+            this.lbl_ulaz.TabIndex = 10;
+            this.lbl_ulaz.Text = "Улаз:";
+            // 
+            // lbl_izlaz
+            // 
+            this.lbl_izlaz.AutoSize = true;
+            this.lbl_izlaz.Font = new System.Drawing.Font("Bahnschrift Light", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_izlaz.Location = new System.Drawing.Point(1010, 161);
+            this.lbl_izlaz.Name = "lbl_izlaz";
+            this.lbl_izlaz.Size = new System.Drawing.Size(96, 34);
+            this.lbl_izlaz.TabIndex = 11;
+            this.lbl_izlaz.Text = "Излаз:";
+            // 
+            // lbl_kolicina
+            // 
+            this.lbl_kolicina.AutoSize = true;
+            this.lbl_kolicina.Font = new System.Drawing.Font("Bahnschrift Light", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_kolicina.Location = new System.Drawing.Point(1193, 161);
+            this.lbl_kolicina.Name = "lbl_kolicina";
+            this.lbl_kolicina.Size = new System.Drawing.Size(148, 34);
+            this.lbl_kolicina.TabIndex = 12;
+            this.lbl_kolicina.Text = "Количина:";
+            // 
+            // txt_ulaz
+            // 
+            this.txt_ulaz.Font = new System.Drawing.Font("Bahnschrift Light", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_ulaz.Location = new System.Drawing.Point(776, 210);
+            this.txt_ulaz.Name = "txt_ulaz";
+            this.txt_ulaz.Size = new System.Drawing.Size(155, 40);
+            this.txt_ulaz.TabIndex = 13;
+            // 
+            // txt_izlaz
+            // 
+            this.txt_izlaz.Font = new System.Drawing.Font("Bahnschrift Light", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_izlaz.Location = new System.Drawing.Point(980, 210);
+            this.txt_izlaz.Name = "txt_izlaz";
+            this.txt_izlaz.Size = new System.Drawing.Size(155, 40);
+            this.txt_izlaz.TabIndex = 14;
+            // 
+            // txt_kolicina
+            // 
+            this.txt_kolicina.Font = new System.Drawing.Font("Bahnschrift Light", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_kolicina.Location = new System.Drawing.Point(1179, 210);
+            this.txt_kolicina.Name = "txt_kolicina";
+            this.txt_kolicina.Size = new System.Drawing.Size(177, 40);
+            this.txt_kolicina.TabIndex = 15;
+            // 
+            // lbl_trosak
+            // 
+            this.lbl_trosak.AutoSize = true;
+            this.lbl_trosak.Font = new System.Drawing.Font("Bahnschrift Light", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_trosak.Location = new System.Drawing.Point(90, 272);
+            this.lbl_trosak.Name = "lbl_trosak";
+            this.lbl_trosak.Size = new System.Drawing.Size(114, 34);
+            this.lbl_trosak.TabIndex = 16;
+            this.lbl_trosak.Text = "Трошак:";
+            // 
+            // lbl_org
+            // 
+            this.lbl_org.AutoSize = true;
+            this.lbl_org.Font = new System.Drawing.Font("Bahnschrift Light", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_org.Location = new System.Drawing.Point(314, 272);
+            this.lbl_org.Name = "lbl_org";
+            this.lbl_org.Size = new System.Drawing.Size(348, 34);
+            this.lbl_org.TabIndex = 17;
+            this.lbl_org.Text = "Организациона јединица:";
+            // 
+            // lbl_firma
+            // 
+            this.lbl_firma.AutoSize = true;
+            this.lbl_firma.Font = new System.Drawing.Font("Bahnschrift Light", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_firma.Location = new System.Drawing.Point(790, 272);
+            this.lbl_firma.Name = "lbl_firma";
+            this.lbl_firma.Size = new System.Drawing.Size(107, 34);
+            this.lbl_firma.TabIndex = 18;
+            this.lbl_firma.Text = "Фирма:";
+            // 
+            // cmb_org
+            // 
+            this.cmb_org.Font = new System.Drawing.Font("Bahnschrift Light", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_org.FormattingEnabled = true;
+            this.cmb_org.Location = new System.Drawing.Point(300, 322);
+            this.cmb_org.Name = "cmb_org";
+            this.cmb_org.Size = new System.Drawing.Size(382, 41);
+            this.cmb_org.TabIndex = 19;
+            // 
+            // cmb_trosak
+            // 
+            this.cmb_trosak.Font = new System.Drawing.Font("Bahnschrift Light", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_trosak.FormattingEnabled = true;
+            this.cmb_trosak.Location = new System.Drawing.Point(18, 322);
+            this.cmb_trosak.Name = "cmb_trosak";
+            this.cmb_trosak.Size = new System.Drawing.Size(245, 41);
+            this.cmb_trosak.TabIndex = 20;
+            // 
+            // cmb_firma
+            // 
+            this.cmb_firma.Font = new System.Drawing.Font("Bahnschrift Light", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_firma.FormattingEnabled = true;
+            this.cmb_firma.Location = new System.Drawing.Point(715, 322);
+            this.cmb_firma.Name = "cmb_firma";
+            this.cmb_firma.Size = new System.Drawing.Size(249, 41);
+            this.cmb_firma.TabIndex = 21;
+            // 
+            // lbl_opis
+            // 
+            this.lbl_opis.AutoSize = true;
+            this.lbl_opis.Font = new System.Drawing.Font("Bahnschrift Light", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_opis.Location = new System.Drawing.Point(1137, 272);
+            this.lbl_opis.Name = "lbl_opis";
+            this.lbl_opis.Size = new System.Drawing.Size(84, 34);
+            this.lbl_opis.TabIndex = 22;
+            this.lbl_opis.Text = "Опис:";
+            // 
+            // txt_opis
+            // 
+            this.txt_opis.Font = new System.Drawing.Font("Bahnschrift Light", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_opis.Location = new System.Drawing.Point(998, 322);
+            this.txt_opis.Name = "txt_opis";
+            this.txt_opis.Size = new System.Drawing.Size(358, 40);
+            this.txt_opis.TabIndex = 23;
+            // 
+            // btn_dodaj
+            // 
+            this.btn_dodaj.Font = new System.Drawing.Font("Bahnschrift Light", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_dodaj.Location = new System.Drawing.Point(705, 44);
+            this.btn_dodaj.Name = "btn_dodaj";
+            this.btn_dodaj.Size = new System.Drawing.Size(213, 45);
+            this.btn_dodaj.TabIndex = 24;
+            this.btn_dodaj.Text = "Додај трансакцију";
+            this.btn_dodaj.UseVisualStyleBackColor = true;
+            // 
+            // btn_izmeni
+            // 
+            this.btn_izmeni.Font = new System.Drawing.Font("Bahnschrift Light", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_izmeni.Location = new System.Drawing.Point(924, 44);
+            this.btn_izmeni.Name = "btn_izmeni";
+            this.btn_izmeni.Size = new System.Drawing.Size(213, 45);
+            this.btn_izmeni.TabIndex = 25;
+            this.btn_izmeni.Text = "Измени трансакцију";
+            this.btn_izmeni.UseVisualStyleBackColor = true;
+            // 
+            // btn_obrisi
+            // 
+            this.btn_obrisi.Font = new System.Drawing.Font("Bahnschrift Light", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_obrisi.Location = new System.Drawing.Point(1143, 44);
+            this.btn_obrisi.Name = "btn_obrisi";
+            this.btn_obrisi.Size = new System.Drawing.Size(213, 45);
+            this.btn_obrisi.TabIndex = 26;
+            this.btn_obrisi.Text = "Обриши трансакцију";
+            this.btn_obrisi.UseVisualStyleBackColor = true;
+            // 
             // Transakcije
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1353, 709);
+            this.ClientSize = new System.Drawing.Size(1368, 774);
+            this.Controls.Add(this.btn_obrisi);
+            this.Controls.Add(this.btn_izmeni);
+            this.Controls.Add(this.btn_dodaj);
+            this.Controls.Add(this.txt_opis);
+            this.Controls.Add(this.lbl_opis);
+            this.Controls.Add(this.cmb_firma);
+            this.Controls.Add(this.cmb_trosak);
+            this.Controls.Add(this.cmb_org);
+            this.Controls.Add(this.lbl_firma);
+            this.Controls.Add(this.lbl_org);
+            this.Controls.Add(this.lbl_trosak);
+            this.Controls.Add(this.txt_kolicina);
+            this.Controls.Add(this.txt_izlaz);
+            this.Controls.Add(this.txt_ulaz);
+            this.Controls.Add(this.lbl_kolicina);
+            this.Controls.Add(this.lbl_izlaz);
+            this.Controls.Add(this.lbl_ulaz);
+            this.Controls.Add(this.cmb_novcanik);
+            this.Controls.Add(this.lbl_novcanik);
+            this.Controls.Add(this.lbl_datum);
+            this.Controls.Add(this.cmb_datum);
+            this.Controls.Add(this.lbl_linija);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.txt_ime_prezime);
             this.Controls.Add(this.txt_email);
             this.Controls.Add(this.lbl_ime_prezime);
@@ -85,6 +347,7 @@ namespace Kucni_budzet_VS
             this.Name = "Transakcije";
             this.Text = "Transakcije";
             this.Load += new System.EventHandler(this.Transakcije_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -96,5 +359,28 @@ namespace Kucni_budzet_VS
         private System.Windows.Forms.Label lbl_ime_prezime;
         private System.Windows.Forms.TextBox txt_email;
         private System.Windows.Forms.TextBox txt_ime_prezime;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label lbl_linija;
+        private System.Windows.Forms.DateTimePicker cmb_datum;
+        private System.Windows.Forms.Label lbl_datum;
+        private System.Windows.Forms.Label lbl_novcanik;
+        private System.Windows.Forms.ComboBox cmb_novcanik;
+        private System.Windows.Forms.Label lbl_ulaz;
+        private System.Windows.Forms.Label lbl_izlaz;
+        private System.Windows.Forms.Label lbl_kolicina;
+        private System.Windows.Forms.TextBox txt_ulaz;
+        private System.Windows.Forms.TextBox txt_izlaz;
+        private System.Windows.Forms.TextBox txt_kolicina;
+        private System.Windows.Forms.Label lbl_trosak;
+        private System.Windows.Forms.Label lbl_org;
+        private System.Windows.Forms.Label lbl_firma;
+        private System.Windows.Forms.ComboBox cmb_org;
+        private System.Windows.Forms.ComboBox cmb_trosak;
+        private System.Windows.Forms.ComboBox cmb_firma;
+        private System.Windows.Forms.Label lbl_opis;
+        private System.Windows.Forms.TextBox txt_opis;
+        private System.Windows.Forms.Button btn_dodaj;
+        private System.Windows.Forms.Button btn_izmeni;
+        private System.Windows.Forms.Button btn_obrisi;
     }
 }
