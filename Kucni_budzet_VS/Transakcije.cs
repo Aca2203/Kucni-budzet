@@ -17,6 +17,7 @@ namespace Kucni_budzet_VS
         SqlDataAdapter adapter;
         DataTable tabela;
         string naredba;
+        SqlCommand komanda;
 
         public Transakcije()
         {
@@ -45,7 +46,7 @@ namespace Kucni_budzet_VS
 
         private void txt_stanje_popuni()
         {
-            SqlCommand komanda = new SqlCommand("SELECT SUM(stanje) FROM Novcanik JOIN Osoba ON Novcanik.FK_osoba_email = Osoba.email WHERE Osoba.email = '" + Program.email + "'", veza);
+            komanda = new SqlCommand("SELECT SUM(stanje) FROM Novcanik JOIN Osoba ON Novcanik.FK_osoba_email = Osoba.email WHERE Osoba.email = '" + Program.email + "'", veza);
 
             veza.Open();
             string rezultat = komanda.ExecuteScalar().ToString();
@@ -66,17 +67,42 @@ namespace Kucni_budzet_VS
 
         private void cmb_popuni()
         {
-            naredba = "SELECT id, naziv FROM Novcanik WHERE FK_osoba_email = '" + Program.email + "'";
+            naredba = "SELECT 0 AS id, N'Сви новчаници' AS naziv UNION SELECT id, naziv FROM Novcanik WHERE FK_osoba_email = '" + Program.email + "'";
             
             adapter = new SqlDataAdapter(naredba, veza);
-            tabela = new DataTable();
+            tabela = new DataTable();          
             adapter.Fill(tabela);
-            
+
             cmb_novcanik.DataSource = tabela;
-            cmb_novcanik.Items[0] = "";
             cmb_novcanik.ValueMember = "id";
             cmb_novcanik.DisplayMember = "naziv";
-            cmb_novcanik.SelectedIndex = -1;
+            cmb_novcanik.SelectedValue = 0;            
+        }
+
+        private void cmb_novcanik_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (cmb_novcanik.IsHandleCreated && cmb_novcanik.Focused)
+            {
+                if ((int) cmb_novcanik.SelectedValue == 0)
+                {
+                    txt_stanje_popuni();
+                }
+                else
+                {
+                    txt_stanje_promeni();
+                }                
+            }
+        }
+
+        private void txt_stanje_promeni()
+        {
+            komanda = new SqlCommand("SELECT stanje FROM Novcanik JOIN Osoba ON Novcanik.FK_osoba_email = Osoba.email WHERE Osoba.email = '" + Program.email + "' AND Novcanik.id = " + cmb_novcanik.SelectedValue, veza);
+
+            veza.Open();
+            string rezultat = komanda.ExecuteScalar().ToString();
+            veza.Close();
+
+            txt_stanje.Text = rezultat;
         }
     }
 }

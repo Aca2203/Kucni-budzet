@@ -40,19 +40,19 @@ namespace Kucni_budzet_VS
             // lbl_email
             // 
             this.lbl_email.AutoSize = true;
-            this.lbl_email.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_email.Location = new System.Drawing.Point(25, 49);
+            this.lbl_email.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_email.Location = new System.Drawing.Point(26, 49);
             this.lbl_email.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_email.Name = "lbl_email";
-            this.lbl_email.Size = new System.Drawing.Size(149, 25);
+            this.lbl_email.Size = new System.Drawing.Size(154, 25);
             this.lbl_email.TabIndex = 0;
             this.lbl_email.Text = "Имејл адреса:";
             // 
             // lbl_lozinka
             // 
             this.lbl_lozinka.AutoSize = true;
-            this.lbl_lozinka.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_lozinka.Location = new System.Drawing.Point(76, 94);
+            this.lbl_lozinka.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_lozinka.Location = new System.Drawing.Point(77, 95);
             this.lbl_lozinka.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_lozinka.Name = "lbl_lozinka";
             this.lbl_lozinka.Size = new System.Drawing.Size(103, 25);
@@ -61,26 +61,26 @@ namespace Kucni_budzet_VS
             // 
             // txt_email
             // 
-            this.txt_email.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_email.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_email.Location = new System.Drawing.Point(188, 46);
             this.txt_email.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txt_email.Name = "txt_email";
-            this.txt_email.Size = new System.Drawing.Size(383, 32);
+            this.txt_email.Size = new System.Drawing.Size(383, 31);
             this.txt_email.TabIndex = 2;
             // 
             // txt_lozinka
             // 
-            this.txt_lozinka.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_lozinka.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_lozinka.Location = new System.Drawing.Point(188, 92);
             this.txt_lozinka.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txt_lozinka.Name = "txt_lozinka";
             this.txt_lozinka.PasswordChar = '*';
-            this.txt_lozinka.Size = new System.Drawing.Size(383, 32);
+            this.txt_lozinka.Size = new System.Drawing.Size(383, 31);
             this.txt_lozinka.TabIndex = 3;
             // 
             // btn_prijava
             // 
-            this.btn_prijava.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_prijava.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_prijava.Location = new System.Drawing.Point(206, 159);
             this.btn_prijava.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_prijava.Name = "btn_prijava";
@@ -93,7 +93,7 @@ namespace Kucni_budzet_VS
             // lbl_poruka
             // 
             this.lbl_poruka.AutoSize = true;
-            this.lbl_poruka.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_poruka.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_poruka.ForeColor = System.Drawing.Color.Red;
             this.lbl_poruka.Location = new System.Drawing.Point(26, 228);
             this.lbl_poruka.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
