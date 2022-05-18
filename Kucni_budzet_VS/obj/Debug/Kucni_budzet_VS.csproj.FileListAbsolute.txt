@@ -11,3 +11,16 @@ C:\Users\Sale\Desktop\Programi\Kucni-budzet\Kucni_budzet_VS\obj\Debug\Kucni_budz
 C:\Users\Sale\Desktop\Programi\Kucni-budzet\Kucni_budzet_VS\obj\Debug\Kucni_budzet_VS.Administrator_podaci.resources
 C:\Users\Sale\Desktop\Programi\Kucni-budzet\Kucni_budzet_VS\obj\Debug\Kucni_budzet_VS.Korisnik_podaci.resources
 C:\Users\Sale\Desktop\Programi\Kucni-budzet\Kucni_budzet_VS\obj\Debug\Kucni_budzet_VS.Transakcije.resources
+C:\Users\Sale\Documents\GitHub\Kucni-budzet\Kucni_budzet_VS\bin\Debug\Kucni_budzet_VS.exe.config
+C:\Users\Sale\Documents\GitHub\Kucni-budzet\Kucni_budzet_VS\bin\Debug\Kucni_budzet_VS.exe
+C:\Users\Sale\Documents\GitHub\Kucni-budzet\Kucni_budzet_VS\bin\Debug\Kucni_budzet_VS.pdb
+C:\Users\Sale\Documents\GitHub\Kucni-budzet\Kucni_budzet_VS\obj\Debug\Kucni_budzet_VS.csproj.AssemblyReference.cache
+C:\Users\Sale\Documents\GitHub\Kucni-budzet\Kucni_budzet_VS\obj\Debug\Kucni_budzet_VS.Administrator_podaci.resources
+C:\Users\Sale\Documents\GitHub\Kucni-budzet\Kucni_budzet_VS\obj\Debug\Kucni_budzet_VS.Korisnik_podaci.resources
+C:\Users\Sale\Documents\GitHub\Kucni-budzet\Kucni_budzet_VS\obj\Debug\Kucni_budzet_VS.Prijava.resources
+C:\Users\Sale\Documents\GitHub\Kucni-budzet\Kucni_budzet_VS\obj\Debug\Kucni_budzet_VS.Properties.Resources.resources
+C:\Users\Sale\Documents\GitHub\Kucni-budzet\Kucni_budzet_VS\obj\Debug\Kucni_budzet_VS.Transakcije.resources
+C:\Users\Sale\Documents\GitHub\Kucni-budzet\Kucni_budzet_VS\obj\Debug\Kucni_budzet_VS.csproj.GenerateResource.cache
+C:\Users\Sale\Documents\GitHub\Kucni-budzet\Kucni_budzet_VS\obj\Debug\Kucni_budzet_VS.csproj.CoreCompileInputs.cache
+C:\Users\Sale\Documents\GitHub\Kucni-budzet\Kucni_budzet_VS\obj\Debug\Kucni_budzet_VS.exe
+C:\Users\Sale\Documents\GitHub\Kucni-budzet\Kucni_budzet_VS\obj\Debug\Kucni_budzet_VS.pdb

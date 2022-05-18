@@ -40,46 +40,51 @@ namespace Kucni_budzet_VS
             // lbl_email
             // 
             this.lbl_email.AutoSize = true;
-            this.lbl_email.Font = new System.Drawing.Font("Bahnschrift Light", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_email.Location = new System.Drawing.Point(33, 60);
+            this.lbl_email.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_email.Location = new System.Drawing.Point(25, 49);
+            this.lbl_email.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_email.Name = "lbl_email";
-            this.lbl_email.Size = new System.Drawing.Size(198, 34);
+            this.lbl_email.Size = new System.Drawing.Size(149, 25);
             this.lbl_email.TabIndex = 0;
             this.lbl_email.Text = "Имејл адреса:";
             // 
             // lbl_lozinka
             // 
             this.lbl_lozinka.AutoSize = true;
-            this.lbl_lozinka.Font = new System.Drawing.Font("Bahnschrift Light", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_lozinka.Location = new System.Drawing.Point(101, 116);
+            this.lbl_lozinka.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_lozinka.Location = new System.Drawing.Point(76, 94);
+            this.lbl_lozinka.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_lozinka.Name = "lbl_lozinka";
-            this.lbl_lozinka.Size = new System.Drawing.Size(130, 34);
+            this.lbl_lozinka.Size = new System.Drawing.Size(103, 25);
             this.lbl_lozinka.TabIndex = 1;
             this.lbl_lozinka.Text = "Лозинка:";
             // 
             // txt_email
             // 
-            this.txt_email.Font = new System.Drawing.Font("Bahnschrift Light", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_email.Location = new System.Drawing.Point(251, 57);
+            this.txt_email.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_email.Location = new System.Drawing.Point(188, 46);
+            this.txt_email.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txt_email.Name = "txt_email";
-            this.txt_email.Size = new System.Drawing.Size(509, 40);
+            this.txt_email.Size = new System.Drawing.Size(383, 32);
             this.txt_email.TabIndex = 2;
             // 
             // txt_lozinka
             // 
-            this.txt_lozinka.Font = new System.Drawing.Font("Bahnschrift Light", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_lozinka.Location = new System.Drawing.Point(251, 113);
+            this.txt_lozinka.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_lozinka.Location = new System.Drawing.Point(188, 92);
+            this.txt_lozinka.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txt_lozinka.Name = "txt_lozinka";
             this.txt_lozinka.PasswordChar = '*';
-            this.txt_lozinka.Size = new System.Drawing.Size(509, 40);
+            this.txt_lozinka.Size = new System.Drawing.Size(383, 32);
             this.txt_lozinka.TabIndex = 3;
             // 
             // btn_prijava
             // 
-            this.btn_prijava.Font = new System.Drawing.Font("Bahnschrift Light", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_prijava.Location = new System.Drawing.Point(275, 196);
+            this.btn_prijava.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_prijava.Location = new System.Drawing.Point(206, 159);
+            this.btn_prijava.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_prijava.Name = "btn_prijava";
-            this.btn_prijava.Size = new System.Drawing.Size(275, 59);
+            this.btn_prijava.Size = new System.Drawing.Size(206, 48);
             this.btn_prijava.TabIndex = 4;
             this.btn_prijava.Text = "Пријави се!";
             this.btn_prijava.UseVisualStyleBackColor = true;
@@ -88,25 +93,27 @@ namespace Kucni_budzet_VS
             // lbl_poruka
             // 
             this.lbl_poruka.AutoSize = true;
-            this.lbl_poruka.Font = new System.Drawing.Font("Bahnschrift Light", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_poruka.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_poruka.ForeColor = System.Drawing.Color.Red;
-            this.lbl_poruka.Location = new System.Drawing.Point(35, 280);
+            this.lbl_poruka.Location = new System.Drawing.Point(26, 228);
+            this.lbl_poruka.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_poruka.Name = "lbl_poruka";
-            this.lbl_poruka.Size = new System.Drawing.Size(0, 21);
+            this.lbl_poruka.Size = new System.Drawing.Size(0, 25);
             this.lbl_poruka.TabIndex = 5;
             // 
-            // Login
+            // Prijava
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(813, 329);
+            this.ClientSize = new System.Drawing.Size(610, 267);
             this.Controls.Add(this.lbl_poruka);
             this.Controls.Add(this.btn_prijava);
             this.Controls.Add(this.txt_lozinka);
             this.Controls.Add(this.txt_email);
             this.Controls.Add(this.lbl_lozinka);
             this.Controls.Add(this.lbl_email);
-            this.Name = "Login";
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Name = "Prijava";
             this.Text = "Пријава";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Login_FormClosed);
             this.ResumeLayout(false);

@@ -1,4 +1,4 @@
--- Креирање базе података
+﻿-- Креирање базе података
 CREATE DATABASE Kucni_budzet;
 USE Kucni_budzet;
 
@@ -53,6 +53,9 @@ CREATE TABLE Promet(
   opis NVARCHAR(500)
 );
 
+ALTER TABLE Promet
+ALTER COLUMN datum DATE NOT NULL
+
 -- Унос података у табеле
 INSERT INTO Uloga (naziv) VALUES (N'Администратор');
 INSERT INTO Uloga (naziv) VALUES (N'Корисник');
@@ -61,6 +64,7 @@ INSERT INTO Osoba (email, lozinka, ime, prezime, jmbg, FK_uloga_id) VALUES ('ale
 INSERT INTO Osoba (email, lozinka, ime, prezime, jmbg, FK_uloga_id) VALUES ('tanjamarkovic@KB_K.rs', 'tanja123', N'Тања', N'Марковић', '1712001289564', 2);
 INSERT INTO Osoba (email, lozinka, ime, prezime, jmbg, FK_uloga_id) VALUES ('mirkolazic@KB_K.rs', 'miki97', N'Мирко', N'Лазић', NULL, 2);
 INSERT INTO Osoba (email, lozinka, ime, prezime, jmbg, FK_uloga_id) VALUES ('mirkolazic@KB_A.rs', 'miki97', N'Мирко', N'Лазић', NULL, 1);
+INSERT INTO Osoba (email, lozinka, ime, prezime, jmbg, FK_uloga_id) VALUES ('prvi@KB_A.rs', '1234', N'Тест', N'Тест', NULL, 1);
 
 INSERT INTO Novcanik (naziv, stanje, FK_osoba_email) VALUES (N'Џеп', 0, 'aleksandarstefanovic@KB_A.rs'); -- подразумевани новчаник
 INSERT INTO Novcanik (naziv, stanje, FK_osoba_email) VALUES (N'Фиока', 0, 'aleksandarstefanovic@KB_A.rs');
@@ -101,10 +105,10 @@ JOIN Osoba ON Novcanik.FK_osoba_email = Osoba.email
 WHERE Osoba.email = 'mirkolazic@KB_A.rs';
 
 UPDATE Novcanik
-SET stanje = 200
-WHERE id = 2;
+SET stanje = 500
+WHERE id = 1;
 
--- Шифарник новчаника
+-- Преглед новчаника
 SELECT Novcanik.naziv, Novcanik.stanje, Osoba.ime, Osoba.prezime FROM Novcanik
 JOIN Osoba ON Novcanik.FK_osoba_email = Osoba.email;
 
@@ -116,24 +120,17 @@ SELECT * FROM Organizaciona_jedinica;
 SELECT * FROM Firma;
 
 -- Главна форма
-SELECT Promet.datum AS 'Датум и време', Osoba.email AS 'Имејл адреса', Osoba.ime + ' ' + Osoba.prezime AS 'Име и презиме особе', Novcanik.naziv AS 'Новчаник', Trosak.naziv AS 'Трошак', Promet.kolicina AS 'Количина', Organizaciona_jedinica.naziv AS 'Организациона јединица', Firma.naziv AS 'Фирма', Promet.ulaz AS 'Улаз', Promet.izlaz AS 'Излаз', Promet.opis AS 'Опис'
+SELECT Promet.datum AS 'Датум', Novcanik.naziv AS 'Новчаник', Trosak.naziv AS 'Трошак', Organizaciona_jedinica.naziv AS 'Организациона јединица', Firma.naziv AS 'Фирма', Promet.ulaz AS 'Улаз', Promet.izlaz AS 'Излаз', Promet.kolicina AS 'Количина'
 FROM Promet
 JOIN Osoba ON Promet.FK_osoba_email = Osoba.email
 JOIN Novcanik ON Promet.FK_novcanik_id = Novcanik.id
 JOIN Trosak ON Promet.FK_trosak_id = Trosak.id
 JOIN Organizaciona_jedinica ON Promet.FK_organizaciona_jedinica_id = Organizaciona_jedinica.id
 JOIN Firma ON Promet.FK_firma_id = Firma.id
+WHERE Osoba.email = 'aleksandarstefanovic@KB_A.rs'
 ORDER BY datum;
 
 DELETE FROM Promet;
-
--- Функција
-CREATE FUNCTION UzmiVreme()
-RETURNS TIME
-AS
-BEGIN
-  RETURN CAST(GETDATE() AS TIME);
-END;
 
 -- Окидачи
 
