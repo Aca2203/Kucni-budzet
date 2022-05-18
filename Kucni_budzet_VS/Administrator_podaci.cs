@@ -27,8 +27,7 @@ namespace Kucni_budzet_VS
 
         private void Administrator_Load(object sender, EventArgs e)
         {
-            podaci_ucitaj();
-            txt_stanje_ucitaj();
+            podaci_ucitaj();            
         }
 
         private void podaci_ucitaj()
@@ -44,33 +43,19 @@ namespace Kucni_budzet_VS
             txt_prezime.Text = tabela.Rows[0]["prezime"].ToString();
             txt_jmbg.Text = tabela.Rows[0]["jmbg"].ToString();
             txt_lozinka.Text = tabela.Rows[0]["lozinka"].ToString();
-        }
-
-        private void txt_stanje_ucitaj()
-        {
-            SqlCommand komanda = new SqlCommand("SELECT SUM(stanje) FROM Novcanik JOIN Osoba ON Novcanik.FK_osoba_email = Osoba.email WHERE Osoba.email = '" + Program.email + "'", veza);
-
-            veza.Open();
-            string rezultat = komanda.ExecuteScalar().ToString();
-            veza.Close();
-
-            txt_stanje.Text = rezultat;
-        }
+        }        
 
         private void btn_izmeni_Click(object sender, EventArgs e)
         {
             string ime = txt_ime.Text;
-            string prezime = txt_prezime.Text;
-            string email = txt_email.Text;
-            string lozinka = txt_lozinka.Text;
-            string jmbg = txt_jmbg.Text;
+            string prezime = txt_prezime.Text;            
+            string lozinka = txt_lozinka.Text;            
 
             StringBuilder naredba = new StringBuilder("UPDATE Osoba SET ");
             naredba.Append("ime = N'" + ime + "', ");
             naredba.Append("prezime = N'" + prezime + "', ");
-            naredba.Append("lozinka = '" + lozinka + "', ");
-            naredba.Append("jmbg = '" + jmbg + "' ");
-            naredba.Append("WHERE email = '" + email + "'");
+            naredba.Append("lozinka = '" + lozinka + "' ");            
+            naredba.Append("WHERE email = '" + Program.email + "'");
 
             SqlCommand komanda = new SqlCommand(naredba.ToString(), veza);
 

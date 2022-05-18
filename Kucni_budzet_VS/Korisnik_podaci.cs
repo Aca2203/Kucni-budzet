@@ -27,8 +27,7 @@ namespace Kucni_budzet_VS
 
         private void Korisnik_podaci_Load(object sender, EventArgs e)
         {            
-            podaci_ucitaj();
-            txt_stanje_ucitaj();
+            podaci_ucitaj();            
         }
 
         private void podaci_ucitaj()
@@ -44,18 +43,7 @@ namespace Kucni_budzet_VS
             txt_prezime.Text = tabela.Rows[0]["prezime"].ToString();
             txt_jmbg.Text = tabela.Rows[0]["jmbg"].ToString();
             txt_lozinka.Text = tabela.Rows[0]["lozinka"].ToString();
-        }
-
-        private void txt_stanje_ucitaj()
-        {
-            SqlCommand komanda = new SqlCommand("SELECT SUM(stanje) FROM Novcanik JOIN Osoba ON Novcanik.FK_osoba_email = Osoba.email WHERE Osoba.email = '" + Program.email + "'", veza);
-
-            veza.Open();
-            string rezultat = komanda.ExecuteScalar().ToString();
-            veza.Close();
-
-            txt_stanje.Text = rezultat;
-        }
+        }        
 
         private void btn_izmeni_Click(object sender, EventArgs e)
         {

@@ -31,6 +31,7 @@ namespace Kucni_budzet_VS
         {
             this.ms_pregledi = new System.Windows.Forms.MenuStrip();
             this.i_transakcije = new System.Windows.Forms.ToolStripMenuItem();
+            this.i_novcanici = new System.Windows.Forms.ToolStripMenuItem();
             this.i_osobe = new System.Windows.Forms.ToolStripMenuItem();
             this.i_sifarnici = new System.Windows.Forms.ToolStripMenuItem();
             this.lbl_tekst = new System.Windows.Forms.Label();
@@ -45,9 +46,6 @@ namespace Kucni_budzet_VS
             this.txt_lozinka = new System.Windows.Forms.TextBox();
             this.txt_jmbg = new System.Windows.Forms.TextBox();
             this.btn_izmeni = new System.Windows.Forms.Button();
-            this.lbl_stanje = new System.Windows.Forms.Label();
-            this.txt_stanje = new System.Windows.Forms.TextBox();
-            this.i_novcanici = new System.Windows.Forms.ToolStripMenuItem();
             this.ms_pregledi.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,27 +60,33 @@ namespace Kucni_budzet_VS
             this.i_sifarnici});
             this.ms_pregledi.Location = new System.Drawing.Point(0, 0);
             this.ms_pregledi.Name = "ms_pregledi";
-            this.ms_pregledi.Size = new System.Drawing.Size(1292, 28);
+            this.ms_pregledi.Size = new System.Drawing.Size(1292, 26);
             this.ms_pregledi.TabIndex = 0;
             this.ms_pregledi.Text = "Прегледи";
             // 
             // i_transakcije
             // 
             this.i_transakcije.Name = "i_transakcije";
-            this.i_transakcije.Size = new System.Drawing.Size(169, 24);
+            this.i_transakcije.Size = new System.Drawing.Size(169, 22);
             this.i_transakcije.Text = "Преглед трансакција";
             this.i_transakcije.Click += new System.EventHandler(this.i_transakcije_Click);
+            // 
+            // i_novcanici
+            // 
+            this.i_novcanici.Name = "i_novcanici";
+            this.i_novcanici.Size = new System.Drawing.Size(158, 22);
+            this.i_novcanici.Text = "Преглед новчаника";
             // 
             // i_osobe
             // 
             this.i_osobe.Name = "i_osobe";
-            this.i_osobe.Size = new System.Drawing.Size(122, 24);
+            this.i_osobe.Size = new System.Drawing.Size(122, 22);
             this.i_osobe.Text = "Преглед особа";
             // 
             // i_sifarnici
             // 
             this.i_sifarnici.Name = "i_sifarnici";
-            this.i_sifarnici.Size = new System.Drawing.Size(165, 24);
+            this.i_sifarnici.Size = new System.Drawing.Size(165, 22);
             this.i_sifarnici.Text = "Преглед шифарника";
             // 
             // lbl_tekst
@@ -180,6 +184,7 @@ namespace Kucni_budzet_VS
             // 
             // txt_jmbg
             // 
+            this.txt_jmbg.Enabled = false;
             this.txt_jmbg.Font = new System.Drawing.Font("Bahnschrift Light", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_jmbg.Location = new System.Drawing.Point(235, 252);
             this.txt_jmbg.Name = "txt_jmbg";
@@ -189,7 +194,7 @@ namespace Kucni_budzet_VS
             // btn_izmeni
             // 
             this.btn_izmeni.Font = new System.Drawing.Font("Bahnschrift Light", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_izmeni.Location = new System.Drawing.Point(873, 330);
+            this.btn_izmeni.Location = new System.Drawing.Point(868, 239);
             this.btn_izmeni.Name = "btn_izmeni";
             this.btn_izmeni.Size = new System.Drawing.Size(292, 64);
             this.btn_izmeni.TabIndex = 12;
@@ -197,38 +202,11 @@ namespace Kucni_budzet_VS
             this.btn_izmeni.UseVisualStyleBackColor = true;
             this.btn_izmeni.Click += new System.EventHandler(this.btn_izmeni_Click);
             // 
-            // lbl_stanje
-            // 
-            this.lbl_stanje.AutoSize = true;
-            this.lbl_stanje.Font = new System.Drawing.Font("Bahnschrift Light", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_stanje.Location = new System.Drawing.Point(18, 346);
-            this.lbl_stanje.Name = "lbl_stanje";
-            this.lbl_stanje.Size = new System.Drawing.Size(200, 34);
-            this.lbl_stanje.TabIndex = 13;
-            this.lbl_stanje.Text = "Укупно стање:";
-            // 
-            // txt_stanje
-            // 
-            this.txt_stanje.Enabled = false;
-            this.txt_stanje.Font = new System.Drawing.Font("Bahnschrift Light", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_stanje.Location = new System.Drawing.Point(235, 343);
-            this.txt_stanje.Name = "txt_stanje";
-            this.txt_stanje.Size = new System.Drawing.Size(220, 40);
-            this.txt_stanje.TabIndex = 14;
-            // 
-            // i_novcanici
-            // 
-            this.i_novcanici.Name = "i_novcanici";
-            this.i_novcanici.Size = new System.Drawing.Size(158, 22);
-            this.i_novcanici.Text = "Преглед новчаника";
-            // 
             // Administrator_podaci
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1292, 453);
-            this.Controls.Add(this.txt_stanje);
-            this.Controls.Add(this.lbl_stanje);
+            this.ClientSize = new System.Drawing.Size(1292, 351);
             this.Controls.Add(this.btn_izmeni);
             this.Controls.Add(this.txt_jmbg);
             this.Controls.Add(this.txt_lozinka);
@@ -272,8 +250,6 @@ namespace Kucni_budzet_VS
         private System.Windows.Forms.TextBox txt_lozinka;
         private System.Windows.Forms.TextBox txt_jmbg;
         private System.Windows.Forms.Button btn_izmeni;
-        private System.Windows.Forms.Label lbl_stanje;
-        private System.Windows.Forms.TextBox txt_stanje;
         private System.Windows.Forms.ToolStripMenuItem i_novcanici;
     }
 }

@@ -29,8 +29,6 @@ namespace Kucni_budzet_VS
         /// </summary>
         private void InitializeComponent()
         {
-            this.txt_stanje = new System.Windows.Forms.TextBox();
-            this.lbl_stanje = new System.Windows.Forms.Label();
             this.btn_izmeni = new System.Windows.Forms.Button();
             this.txt_jmbg = new System.Windows.Forms.TextBox();
             this.txt_lozinka = new System.Windows.Forms.TextBox();
@@ -49,29 +47,10 @@ namespace Kucni_budzet_VS
             this.ms_pregledi.SuspendLayout();
             this.SuspendLayout();
             // 
-            // txt_stanje
-            // 
-            this.txt_stanje.Enabled = false;
-            this.txt_stanje.Font = new System.Drawing.Font("Bahnschrift Light", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_stanje.Location = new System.Drawing.Point(244, 348);
-            this.txt_stanje.Name = "txt_stanje";
-            this.txt_stanje.Size = new System.Drawing.Size(220, 40);
-            this.txt_stanje.TabIndex = 28;
-            // 
-            // lbl_stanje
-            // 
-            this.lbl_stanje.AutoSize = true;
-            this.lbl_stanje.Font = new System.Drawing.Font("Bahnschrift Light", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_stanje.Location = new System.Drawing.Point(27, 351);
-            this.lbl_stanje.Name = "lbl_stanje";
-            this.lbl_stanje.Size = new System.Drawing.Size(200, 34);
-            this.lbl_stanje.TabIndex = 27;
-            this.lbl_stanje.Text = "Укупно стање:";
-            // 
             // btn_izmeni
             // 
             this.btn_izmeni.Font = new System.Drawing.Font("Bahnschrift Light", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_izmeni.Location = new System.Drawing.Point(882, 335);
+            this.btn_izmeni.Location = new System.Drawing.Point(889, 244);
             this.btn_izmeni.Name = "btn_izmeni";
             this.btn_izmeni.Size = new System.Drawing.Size(292, 64);
             this.btn_izmeni.TabIndex = 26;
@@ -196,7 +175,7 @@ namespace Kucni_budzet_VS
             // i_transakcije
             // 
             this.i_transakcije.Name = "i_transakcije";
-            this.i_transakcije.Size = new System.Drawing.Size(169, 24);
+            this.i_transakcije.Size = new System.Drawing.Size(169, 22);
             this.i_transakcije.Text = "Преглед трансакција";
             this.i_transakcije.Click += new System.EventHandler(this.i_transakcije_Click);
             // 
@@ -210,10 +189,8 @@ namespace Kucni_budzet_VS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1300, 475);
+            this.ClientSize = new System.Drawing.Size(1300, 353);
             this.Controls.Add(this.ms_pregledi);
-            this.Controls.Add(this.txt_stanje);
-            this.Controls.Add(this.lbl_stanje);
             this.Controls.Add(this.btn_izmeni);
             this.Controls.Add(this.txt_jmbg);
             this.Controls.Add(this.txt_lozinka);
@@ -238,9 +215,6 @@ namespace Kucni_budzet_VS
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txt_stanje;
-        private System.Windows.Forms.Label lbl_stanje;
         private System.Windows.Forms.Button btn_izmeni;
         private System.Windows.Forms.TextBox txt_jmbg;
         private System.Windows.Forms.TextBox txt_lozinka;
