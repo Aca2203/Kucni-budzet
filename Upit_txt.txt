@@ -102,6 +102,9 @@ INSERT INTO Firma (naziv) VALUES (N'Најк');
 INSERT INTO Promet (datum, FK_novcanik_id, FK_osoba_email, FK_trosak_id, kolicina, FK_organizaciona_jedinica_id, FK_firma_id, ulaz, izlaz, opis) VALUES
 ('2022-05-14 10:00', 1, 'aleksandarstefanovic@KB_A.rs', 3, 2, 1, 3, NULL, 110, N'Мачо чоколада');
 
+INSERT INTO Promet (datum, FK_novcanik_id, FK_osoba_email, FK_trosak_id, kolicina, FK_organizaciona_jedinica_id, FK_firma_id, ulaz, izlaz, opis) VALUES
+('2022-05-19', 1, 'aleksandarstefanovic@KB_A.rs', NULL, 1, 1, NULL, NULL, 500, N'Паре из фиоке у џеп');
+
 DELETE FROM Promet;
 
 -- Преглед података
@@ -140,13 +143,17 @@ SELECT Promet.datum AS 'Датум', Novcanik.naziv AS 'Новчаник', Trosa
 FROM Promet
 JOIN Osoba ON Promet.FK_osoba_email = Osoba.email
 JOIN Novcanik ON Promet.FK_novcanik_id = Novcanik.id
-JOIN Trosak ON Promet.FK_trosak_id = Trosak.id
-JOIN Organizaciona_jedinica ON Promet.FK_organizaciona_jedinica_id = Organizaciona_jedinica.id
-JOIN Firma ON Promet.FK_firma_id = Firma.id
+FULL JOIN Trosak ON Promet.FK_trosak_id = Trosak.id
+FULL JOIN Organizaciona_jedinica ON Promet.FK_organizaciona_jedinica_id = Organizaciona_jedinica.id
+FULL JOIN Firma ON Promet.FK_firma_id = Firma.id
 WHERE Osoba.email = 'aleksandarstefanovic@KB_A.rs'
 ORDER BY datum;
 
-DELETE FROM Promet;
+SELECT *
+FROM Promet;
+
+DELETE FROM Promet
+WHERE id = 11;
 
 SELECT 0 AS id, N'Сви новчаници' AS naziv UNION SELECT id, naziv FROM Novcanik WHERE FK_osoba_email = 'aleksandarstefanovic@KB_A.rs';
 

@@ -57,7 +57,7 @@ namespace Kucni_budzet_VS
 
         private void grid_popuni()
         {
-            adapter = new SqlDataAdapter("SELECT Promet.datum AS 'Датум и време', Novcanik.naziv AS 'Новчаник', Trosak.naziv AS 'Трошак', Organizaciona_jedinica.naziv AS 'Организациона јединица', Firma.naziv AS 'Фирма', Promet.ulaz AS 'Улаз', Promet.izlaz AS 'Излаз', Promet.kolicina AS 'Количина' FROM Promet JOIN Osoba ON Promet.FK_osoba_email = Osoba.email JOIN Novcanik ON Promet.FK_novcanik_id = Novcanik.id JOIN Trosak ON Promet.FK_trosak_id = Trosak.id JOIN Organizaciona_jedinica ON Promet.FK_organizaciona_jedinica_id = Organizaciona_jedinica.id JOIN Firma ON Promet.FK_firma_id = Firma.id WHERE Osoba.email = '" + Program.email + "' ORDER BY datum; ", veza);
+            adapter = new SqlDataAdapter("SELECT Promet.datum AS 'Датум и време', Novcanik.naziv AS 'Новчаник', Trosak.naziv AS 'Трошак', Organizaciona_jedinica.naziv AS 'Организациона јединица', Firma.naziv AS 'Фирма', Promet.ulaz AS 'Улаз', Promet.izlaz AS 'Излаз', Promet.kolicina AS 'Количина' FROM Promet JOIN Osoba ON Promet.FK_osoba_email = Osoba.email JOIN Novcanik ON Promet.FK_novcanik_id = Novcanik.id FULL JOIN Trosak ON Promet.FK_trosak_id = Trosak.id FULL JOIN Organizaciona_jedinica ON Promet.FK_organizaciona_jedinica_id = Organizaciona_jedinica.id FULL JOIN Firma ON Promet.FK_firma_id = Firma.id WHERE Osoba.email = '" + Program.email + "' ORDER BY datum; ", veza);
             
             tabela = new DataTable();
             adapter.Fill(tabela);
@@ -140,93 +140,108 @@ namespace Kucni_budzet_VS
 
         private void btn_dodaj_Click(object sender, EventArgs e)
         {
-            StringBuilder naredba = new StringBuilder("INSERT INTO Promet (datum, FK_novcanik_id, FK_osoba_email, FK_trosak_id, kolicina, FK_organizaciona_jedinica_id, FK_firma_id, ulaz, izlaz, opis) VALUES ('");
-            // Датум
-            naredba.Append(cmb_datum.Value.ToString("yyyy-MM-dd") + "', ");
-            
-            // Новчаник
-            if ((int) cmb_novcanik.SelectedValue == 0)
+            try
             {
-                stoperica.Start();
-                lbl_poruka.Text = "Молимо Вас да изаберете новчаник!";                
-            }
-            else
-            {
-                naredba.Append(cmb_novcanik.SelectedValue + ", '");
-                
-                // Имејл адреса
-                naredba.Append(Program.email + "', ");
+                StringBuilder naredba = new StringBuilder("INSERT INTO Promet (datum, FK_novcanik_id, FK_osoba_email, FK_trosak_id, kolicina, FK_organizaciona_jedinica_id, FK_firma_id, ulaz, izlaz, opis) VALUES ('");
+                // Датум
+                naredba.Append(cmb_datum.Value.ToString("yyyy-MM-dd") + "', ");
 
-                // Трошак
-                if (cmb_trosak.SelectedIndex == -1)
-                {
-                    naredba.Append("NULL, ");
-                }
-                else
-                {
-                    naredba.Append(cmb_trosak.SelectedValue + ", ");
-                }
-
-                // Количина
-                if (txt_kolicina.Text == "")
-                {
-                    naredba.Append("NULL, ");
-                }
-                else
-                {
-                    naredba.Append(txt_kolicina.Text + ", ");
-                }
-
-                // Организациона јединица
-                if (cmb_org.SelectedIndex == -1)
-                {
-                    naredba.Append("NULL, ");
-                }
-                else
-                {
-                    naredba.Append(cmb_org.SelectedValue + ", ");
-                }
-
-                // Фирма
-                if (cmb_firma.SelectedIndex == -1)
-                {
-                    naredba.Append("NULL, ");
-                }
-                else
-                {
-                    naredba.Append(cmb_firma.SelectedValue + ", ");
-                }
-
-                // Улаз и излаз (користећи XOR оператор)
-                if (txt_ulaz.Text == "" ^ txt_izlaz.Text == "")
-                {
-                    if (txt_ulaz.Text == "")
-                    {
-                        naredba.Append("NULL, " + txt_izlaz.Text + ", ");
-                    }
-                    else
-                    {
-                        naredba.Append(txt_ulaz.Text + ", NULL, ");
-                    }
-
-                    if (txt_opis.Text == "")
-                    {
-                        naredba.Append("NULL)");
-                    }
-                    else
-                    {
-                        naredba.Append("N'"+ txt_opis.Text + "')");
-                    }
-
-                    MessageBox.Show(naredba.ToString());
-                }
-                else
+                // Новчаник
+                if ((int)cmb_novcanik.SelectedValue == 0)
                 {
                     stoperica.Start();
-                    lbl_poruka.Text = "Мора бити попуњен или само улаз или само излаз!";
+                    lbl_poruka.Text = "Молимо Вас да изаберете новчаник!";
                 }
+                else
+                {
+                    naredba.Append(cmb_novcanik.SelectedValue + ", '");
 
-                
+                    // Имејл адреса
+                    naredba.Append(Program.email + "', ");
+
+                    // Трошак
+                    if (cmb_trosak.SelectedIndex == -1)
+                    {
+                        naredba.Append("NULL, ");
+                    }
+                    else
+                    {
+                        naredba.Append(cmb_trosak.SelectedValue + ", ");
+                    }
+
+                    // Количина
+                    if (txt_kolicina.Text == "")
+                    {
+                        naredba.Append("1, ");
+                    }
+                    else
+                    {
+                        naredba.Append(txt_kolicina.Text + ", ");
+                    }
+
+                    // Организациона јединица
+                    if (cmb_org.SelectedIndex == -1)
+                    {
+                        naredba.Append("NULL, ");
+                    }
+                    else
+                    {
+                        naredba.Append(cmb_org.SelectedValue + ", ");
+                    }
+
+                    // Фирма
+                    if (cmb_firma.SelectedIndex == -1)
+                    {
+                        naredba.Append("NULL, ");
+                    }
+                    else
+                    {
+                        naredba.Append(cmb_firma.SelectedValue + ", ");
+                    }
+
+                    // Улаз и излаз (користећи XOR оператор)
+                    if (txt_ulaz.Text == "" ^ txt_izlaz.Text == "")
+                    {
+                        if (txt_ulaz.Text == "")
+                        {
+                            naredba.Append("NULL, " + txt_izlaz.Text + ", ");
+                        }
+                        else
+                        {
+                            naredba.Append(txt_ulaz.Text + ", NULL, ");
+                        }
+
+                        // Опис
+                        if (txt_opis.Text == "")
+                        {
+                            naredba.Append("NULL)");
+                        }
+                        else
+                        {
+                            naredba.Append("N'" + txt_opis.Text + "')");
+                        }
+
+                        //MessageBox.Show(naredba.ToString());
+
+                        komanda = new SqlCommand(naredba.ToString(), veza);
+
+                        veza.Open();
+                        komanda.ExecuteNonQuery();
+                        veza.Close();
+
+                        txt_stanje_promeni();
+                        grid_popuni();
+                    }
+                    else
+                    {
+                        stoperica.Start();
+                        lbl_poruka.Text = "Мора бити попуњен или само улаз или само излаз!";
+                    }
+                }
+            }
+            catch (Exception greska)
+            {
+                MessageBox.Show(greska.Message);                
             }            
         }
 

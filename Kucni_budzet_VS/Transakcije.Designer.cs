@@ -113,6 +113,7 @@ namespace Kucni_budzet_VS
             this.grid_promet.Location = new System.Drawing.Point(9, 362);
             this.grid_promet.Margin = new System.Windows.Forms.Padding(2);
             this.grid_promet.Name = "grid_promet";
+            this.grid_promet.ReadOnly = true;
             this.grid_promet.RowHeadersWidth = 51;
             this.grid_promet.RowTemplate.Height = 24;
             this.grid_promet.Size = new System.Drawing.Size(1263, 322);
