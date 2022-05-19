@@ -1,6 +1,7 @@
 ﻿-- Креирање базе података
 CREATE DATABASE Kucni_budzet;
 USE Kucni_budzet;
+DROP DATABASE Kucni_budzet;
 
 -- Креирање табела
 CREATE TABLE Uloga(
@@ -17,31 +18,40 @@ CREATE TABLE Osoba(
   FK_uloga_id INT FOREIGN KEY REFERENCES Uloga(id)
 );
 
+go
 CREATE TABLE Novcanik(
   id INT PRIMARY KEY IDENTITY(1, 1),
   naziv NVARCHAR(50) NOT NULL,
   stanje DECIMAL(8, 2) NOT NULL,
-  FK_osoba_email VARCHAR(70) FOREIGN KEY REFERENCES Osoba(email)
+  FK_osoba_email VARCHAR(70) FOREIGN KEY REFERENCES Osoba(email) -- Процедура за брисање новчаника када се обришу особе
 );
+go
 
+go
 CREATE TABLE Trosak(
   id INT PRIMARY KEY IDENTITY(1, 1),
   naziv NVARCHAR(50)
 );
+go
 
+go
 CREATE TABLE Organizaciona_jedinica(
   id INT PRIMARY KEY IDENTITY(1, 1),
   naziv NVARCHAR(50)
 );
+go
 
+go
 CREATE TABLE Firma(
   id INT PRIMARY KEY IDENTITY(1, 1),
   naziv NVARCHAR(50)
 );
+go
 
+go
 CREATE TABLE Promet(
   id INT PRIMARY KEY IDENTITY(1, 1),
-  datum DATETIME NOT NULL,
+  datum DATE NOT NULL,
   FK_novcanik_id INT FOREIGN KEY REFERENCES Novcanik(id) ON DELETE CASCADE,
   FK_osoba_email VARCHAR(70) FOREIGN KEY REFERENCES Osoba(email) ON DELETE CASCADE,
   FK_trosak_id INT FOREIGN KEY REFERENCES Trosak(id) ON DELETE SET NULL,
@@ -52,6 +62,7 @@ CREATE TABLE Promet(
   izlaz DECIMAL(8, 2),
   opis NVARCHAR(500)
 );
+go
 
 ALTER TABLE Promet
 ALTER COLUMN datum DATE NOT NULL
@@ -66,11 +77,11 @@ INSERT INTO Osoba (email, lozinka, ime, prezime, jmbg, FK_uloga_id) VALUES ('mir
 INSERT INTO Osoba (email, lozinka, ime, prezime, jmbg, FK_uloga_id) VALUES ('mirkolazic@KB_A.rs', 'miki97', N'Мирко', N'Лазић', NULL, 1);
 INSERT INTO Osoba (email, lozinka, ime, prezime, jmbg, FK_uloga_id) VALUES ('prvi@KB_A.rs', '1234', N'Тест', N'Тест', NULL, 1);
 
-INSERT INTO Novcanik (naziv, stanje, FK_osoba_email) VALUES (N'Џеп', 0, 'aleksandarstefanovic@KB_A.rs'); -- подразумевани новчаник
-INSERT INTO Novcanik (naziv, stanje, FK_osoba_email) VALUES (N'Фиока', 0, 'aleksandarstefanovic@KB_A.rs');
-INSERT INTO Novcanik (naziv, stanje, FK_osoba_email) VALUES (N'Џеп', 0, 'tanjamarkovic@KB_K.rs');
-INSERT INTO Novcanik (naziv, stanje, FK_osoba_email) VALUES (N'Полица', 0, 'tanjamarkovic@KB_K.rs');
-INSERT INTO Novcanik (naziv, stanje, FK_osoba_email) VALUES (N'Џеп', 0, 'mirkolazic@KB_K.rs');
+INSERT INTO Novcanik (naziv, stanje, FK_osoba_email) VALUES (N'Џеп', 300, 'aleksandarstefanovic@KB_A.rs'); -- подразумевани новчаник
+INSERT INTO Novcanik (naziv, stanje, FK_osoba_email) VALUES (N'Фиока', 8000, 'aleksandarstefanovic@KB_A.rs');
+INSERT INTO Novcanik (naziv, stanje, FK_osoba_email) VALUES (N'Џеп', 150, 'tanjamarkovic@KB_K.rs');
+INSERT INTO Novcanik (naziv, stanje, FK_osoba_email) VALUES (N'Полица', 5000, 'tanjamarkovic@KB_K.rs');
+INSERT INTO Novcanik (naziv, stanje, FK_osoba_email) VALUES (N'Џеп', 400, 'mirkolazic@KB_K.rs');
 
 INSERT INTO Trosak (naziv) VALUES (N'Струја');
 INSERT INTO Trosak (naziv) VALUES (N'Вода');
@@ -91,6 +102,8 @@ INSERT INTO Firma (naziv) VALUES (N'Најк');
 INSERT INTO Promet (datum, FK_novcanik_id, FK_osoba_email, FK_trosak_id, kolicina, FK_organizaciona_jedinica_id, FK_firma_id, ulaz, izlaz, opis) VALUES
 ('2022-05-14 10:00', 1, 'aleksandarstefanovic@KB_A.rs', 3, 2, 1, 3, NULL, 110, N'Мачо чоколада');
 
+DELETE FROM Promet;
+
 -- Преглед података
 SELECT * FROM Uloga;
 
@@ -102,13 +115,16 @@ JOIN Uloga ON Osoba.FK_uloga_id = Uloga.id;
 SELECT SUM(stanje)
 FROM Novcanik
 JOIN Osoba ON Novcanik.FK_osoba_email = Osoba.email
-WHERE Osoba.email = 'mirkolazic@KB_A.rs';
+WHERE Osoba.email = 'aleksandarstefanovic@KB_A.rs';
 
 UPDATE Novcanik
 SET stanje = 500
 WHERE id = 1;
 
 -- Преглед новчаника
+SELECT *
+FROM Novcanik;
+
 SELECT Novcanik.naziv, Novcanik.stanje, Osoba.ime, Osoba.prezime FROM Novcanik
 JOIN Osoba ON Novcanik.FK_osoba_email = Osoba.email;
 
@@ -131,6 +147,8 @@ WHERE Osoba.email = 'aleksandarstefanovic@KB_A.rs'
 ORDER BY datum;
 
 DELETE FROM Promet;
+
+SELECT 0 AS id, N'Сви новчаници' AS naziv UNION SELECT id, naziv FROM Novcanik WHERE FK_osoba_email = 'aleksandarstefanovic@KB_A.rs';
 
 -- Окидачи
 
