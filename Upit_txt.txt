@@ -204,7 +204,7 @@ ON Promet
 AFTER UPDATE
 AS
 BEGIN
-  -- Брисање
+  -- Delete
   DECLARE @staro_stanje DECIMAL(8, 2);
   SET @staro_stanje = (SELECT stanje FROM Novcanik WHERE Novcanik.id = (SELECT FK_novcanik_id FROM deleted));
   
@@ -214,25 +214,27 @@ BEGIN
   IF (@ulaz IS NULL) SET @novac = (SELECT kolicina FROM deleted)*(SELECT izlaz FROM deleted)
   ELSE SET @novac = (-1)*(SELECT kolicina FROM deleted)*(SELECT ulaz FROM deleted);
   
-  DECLARE @stanje DECIMAL(8, 2);
-  SET @stanje = @staro_stanje + @novac;  
-  
-  -- Унос
-  DECLARE @staro_stanje DECIMAL(8, 2);
-  SET @staro_stanje = (SELECT stanje FROM Novcanik WHERE Novcanik.id = (SELECT FK_novcanik_id FROM deleted));
-  
-  DECLARE @novac DECIMAL(8, 2);
-  DECLARE @ulaz DECIMAL(8, 2);
-  SET @ulaz = (SELECT ulaz FROM deleted);
-  IF (@ulaz IS NULL) SET @novac = (SELECT kolicina FROM deleted)*(SELECT izlaz FROM deleted)
-  ELSE SET @novac = (-1)*(SELECT kolicina FROM deleted)*(SELECT ulaz FROM deleted);
-  
-  DECLARE @novo_stanje DECIMAL(8, 2);
-  SET @novo_stanje = @staro_stanje + @novac;
+  DECLARE @novo_stanje_1 DECIMAL(8, 2);
+  SET @novo_stanje_1 = @staro_stanje + @novac;  
   
   UPDATE Novcanik
-  SET stanje = @novo_stanje
+  SET stanje = @novo_stanje_1
   WHERE Novcanik.id = (SELECT FK_novcanik_id FROM deleted);
+  
+  -- Insert
+  DECLARE @staro_stanje_2 DECIMAL(8, 2);
+  SET @staro_stanje_2 = (SELECT stanje FROM Novcanik WHERE Novcanik.id = (SELECT FK_novcanik_id FROM inserted));
+    
+  SET @ulaz = (SELECT ulaz FROM inserted);
+  IF (@ulaz IS NULL) SET @novac = (-1)*(SELECT kolicina FROM inserted)*(SELECT izlaz FROM inserted)
+  ELSE SET @novac = (SELECT kolicina FROM inserted)*(SELECT ulaz FROM inserted);
+  
+  DECLARE @novo_stanje_2 DECIMAL(8, 2);
+  SET @novo_stanje_2 = @staro_stanje_2 + @novac;  
+  
+  UPDATE Novcanik
+  SET stanje = @novo_stanje_2
+  WHERE Novcanik.id = (SELECT FK_novcanik_id FROM inserted);
 END;
 
 -- Стор процедуре

@@ -76,7 +76,40 @@ namespace Kucni_budzet_VS
             cmb_novcanik.DataSource = tabela;
             cmb_novcanik.ValueMember = "id";
             cmb_novcanik.DisplayMember = "naziv";
-            cmb_novcanik.SelectedValue = 0;            
+            cmb_novcanik.SelectedValue = 0;
+
+            naredba = "SELECT id, naziv FROM Trosak";
+
+            adapter = new SqlDataAdapter(naredba, veza);
+            tabela = new DataTable();
+            adapter.Fill(tabela);
+
+            cmb_trosak.DataSource = tabela;
+            cmb_trosak.ValueMember = "id";
+            cmb_trosak.DisplayMember = "naziv";
+            cmb_trosak.SelectedValue = -1;
+
+            naredba = "SELECT id, naziv FROM Organizaciona_jedinica";
+
+            adapter = new SqlDataAdapter(naredba, veza);
+            tabela = new DataTable();
+            adapter.Fill(tabela);
+
+            cmb_org.DataSource = tabela;
+            cmb_org.ValueMember = "id";
+            cmb_org.DisplayMember = "naziv";
+            cmb_org.SelectedValue = -1;
+
+            naredba = "SELECT id, naziv FROM Firma";
+
+            adapter = new SqlDataAdapter(naredba, veza);
+            tabela = new DataTable();
+            adapter.Fill(tabela);
+
+            cmb_firma.DataSource = tabela;
+            cmb_firma.ValueMember = "id";
+            cmb_firma.DisplayMember = "naziv";
+            cmb_firma.SelectedValue = -1;
         }
 
         private void cmb_novcanik_SelectedValueChanged(object sender, EventArgs e)
@@ -103,6 +136,104 @@ namespace Kucni_budzet_VS
             veza.Close();
 
             txt_stanje.Text = rezultat;
+        }
+
+        private void btn_dodaj_Click(object sender, EventArgs e)
+        {
+            StringBuilder naredba = new StringBuilder("INSERT INTO Promet (datum, FK_novcanik_id, FK_osoba_email, FK_trosak_id, kolicina, FK_organizaciona_jedinica_id, FK_firma_id, ulaz, izlaz, opis) VALUES ('");
+            // Датум
+            naredba.Append(cmb_datum.Value.ToString("yyyy-MM-dd") + "', ");
+            
+            // Новчаник
+            if ((int) cmb_novcanik.SelectedValue == 0)
+            {
+                stoperica.Start();
+                lbl_poruka.Text = "Молимо Вас да изаберете новчаник!";                
+            }
+            else
+            {
+                naredba.Append(cmb_novcanik.SelectedValue + ", '");
+                
+                // Имејл адреса
+                naredba.Append(Program.email + "', ");
+
+                // Трошак
+                if (cmb_trosak.SelectedIndex == -1)
+                {
+                    naredba.Append("NULL, ");
+                }
+                else
+                {
+                    naredba.Append(cmb_trosak.SelectedValue + ", ");
+                }
+
+                // Количина
+                if (txt_kolicina.Text == "")
+                {
+                    naredba.Append("NULL, ");
+                }
+                else
+                {
+                    naredba.Append(txt_kolicina.Text + ", ");
+                }
+
+                // Организациона јединица
+                if (cmb_org.SelectedIndex == -1)
+                {
+                    naredba.Append("NULL, ");
+                }
+                else
+                {
+                    naredba.Append(cmb_org.SelectedValue + ", ");
+                }
+
+                // Фирма
+                if (cmb_firma.SelectedIndex == -1)
+                {
+                    naredba.Append("NULL, ");
+                }
+                else
+                {
+                    naredba.Append(cmb_firma.SelectedValue + ", ");
+                }
+
+                // Улаз и излаз (користећи XOR оператор)
+                if (txt_ulaz.Text == "" ^ txt_izlaz.Text == "")
+                {
+                    if (txt_ulaz.Text == "")
+                    {
+                        naredba.Append("NULL, " + txt_izlaz.Text + ", ");
+                    }
+                    else
+                    {
+                        naredba.Append(txt_ulaz.Text + ", NULL, ");
+                    }
+
+                    if (txt_opis.Text == "")
+                    {
+                        naredba.Append("NULL)");
+                    }
+                    else
+                    {
+                        naredba.Append("N'"+ txt_opis.Text + "')");
+                    }
+
+                    MessageBox.Show(naredba.ToString());
+                }
+                else
+                {
+                    stoperica.Start();
+                    lbl_poruka.Text = "Мора бити попуњен или само улаз или само излаз!";
+                }
+
+                
+            }            
+        }
+
+        private void stoperica_Tick(object sender, EventArgs e)
+        {
+            lbl_poruka.Text = "";
+            stoperica.Stop();
         }
     }
 }

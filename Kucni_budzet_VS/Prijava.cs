@@ -25,6 +25,7 @@ namespace Kucni_budzet_VS
 
             if (email == "" && lozinka == "")
             {
+                stoperica.Start();
                 lbl_poruka.Text = "Молимо вас да унесете ваше податке!";
             }
             else
@@ -34,10 +35,12 @@ namespace Kucni_budzet_VS
 
                 if (rezultat == -2)
                 {
+                    stoperica.Start();
                     lbl_poruka.Text = "Унели сте непостојећу имејл адресу!";
                 }
                 if (rezultat == -1)
                 {
+                    stoperica.Start();
                     lbl_poruka.Text = "Погрешна лозинка!";
                 }
 
@@ -68,6 +71,12 @@ namespace Kucni_budzet_VS
         private void Login_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void stoperica_Tick(object sender, EventArgs e)
+        {
+            lbl_poruka.Text = "";
+            stoperica.Stop();
         }
     }
 }

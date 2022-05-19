@@ -29,6 +29,7 @@ namespace Kucni_budzet_VS
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lbl_email = new System.Windows.Forms.Label();
             this.lbl_ime_prezime = new System.Windows.Forms.Label();
             this.txt_email = new System.Windows.Forms.TextBox();
@@ -58,6 +59,8 @@ namespace Kucni_budzet_VS
             this.btn_obrisi = new System.Windows.Forms.Button();
             this.txt_stanje = new System.Windows.Forms.TextBox();
             this.lbl_stanje = new System.Windows.Forms.Label();
+            this.lbl_poruka = new System.Windows.Forms.Label();
+            this.stoperica = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.grid_promet)).BeginInit();
             this.SuspendLayout();
             // 
@@ -88,7 +91,7 @@ namespace Kucni_budzet_VS
             this.txt_email.Enabled = false;
             this.txt_email.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_email.Location = new System.Drawing.Point(181, 16);
-            this.txt_email.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_email.Margin = new System.Windows.Forms.Padding(2);
             this.txt_email.Name = "txt_email";
             this.txt_email.Size = new System.Drawing.Size(332, 32);
             this.txt_email.TabIndex = 2;
@@ -98,7 +101,7 @@ namespace Kucni_budzet_VS
             this.txt_ime_prezime.Enabled = false;
             this.txt_ime_prezime.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_ime_prezime.Location = new System.Drawing.Point(181, 61);
-            this.txt_ime_prezime.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_ime_prezime.Margin = new System.Windows.Forms.Padding(2);
             this.txt_ime_prezime.Name = "txt_ime_prezime";
             this.txt_ime_prezime.Size = new System.Drawing.Size(332, 32);
             this.txt_ime_prezime.TabIndex = 3;
@@ -108,28 +111,28 @@ namespace Kucni_budzet_VS
             this.grid_promet.AllowUserToAddRows = false;
             this.grid_promet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grid_promet.Location = new System.Drawing.Point(9, 362);
-            this.grid_promet.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grid_promet.Margin = new System.Windows.Forms.Padding(2);
             this.grid_promet.Name = "grid_promet";
             this.grid_promet.RowHeadersWidth = 51;
             this.grid_promet.RowTemplate.Height = 24;
-            this.grid_promet.Size = new System.Drawing.Size(1008, 258);
+            this.grid_promet.Size = new System.Drawing.Size(1263, 322);
             this.grid_promet.TabIndex = 4;
             // 
             // lbl_linija
             // 
             this.lbl_linija.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lbl_linija.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lbl_linija.Location = new System.Drawing.Point(9, 158);
+            this.lbl_linija.Location = new System.Drawing.Point(9, 155);
             this.lbl_linija.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_linija.Name = "lbl_linija";
-            this.lbl_linija.Size = new System.Drawing.Size(997, 2);
+            this.lbl_linija.Size = new System.Drawing.Size(1264, 2);
             this.lbl_linija.TabIndex = 5;
             // 
             // cmb_datum
             // 
             this.cmb_datum.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_datum.Location = new System.Drawing.Point(9, 214);
-            this.cmb_datum.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmb_datum.Margin = new System.Windows.Forms.Padding(2);
             this.cmb_datum.Name = "cmb_datum";
             this.cmb_datum.Size = new System.Drawing.Size(346, 32);
             this.cmb_datum.TabIndex = 6;
@@ -161,7 +164,7 @@ namespace Kucni_budzet_VS
             this.cmb_novcanik.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_novcanik.FormattingEnabled = true;
             this.cmb_novcanik.Location = new System.Drawing.Point(379, 214);
-            this.cmb_novcanik.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmb_novcanik.Margin = new System.Windows.Forms.Padding(2);
             this.cmb_novcanik.Name = "cmb_novcanik";
             this.cmb_novcanik.Size = new System.Drawing.Size(183, 34);
             this.cmb_novcanik.TabIndex = 9;
@@ -182,7 +185,7 @@ namespace Kucni_budzet_VS
             // 
             this.lbl_izlaz.AutoSize = true;
             this.lbl_izlaz.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_izlaz.Location = new System.Drawing.Point(753, 174);
+            this.lbl_izlaz.Location = new System.Drawing.Point(752, 174);
             this.lbl_izlaz.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_izlaz.Name = "lbl_izlaz";
             this.lbl_izlaz.Size = new System.Drawing.Size(81, 26);
@@ -204,7 +207,7 @@ namespace Kucni_budzet_VS
             // 
             this.txt_ulaz.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_ulaz.Location = new System.Drawing.Point(584, 214);
-            this.txt_ulaz.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_ulaz.Margin = new System.Windows.Forms.Padding(2);
             this.txt_ulaz.Name = "txt_ulaz";
             this.txt_ulaz.Size = new System.Drawing.Size(117, 32);
             this.txt_ulaz.TabIndex = 13;
@@ -213,7 +216,7 @@ namespace Kucni_budzet_VS
             // 
             this.txt_izlaz.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_izlaz.Location = new System.Drawing.Point(730, 214);
-            this.txt_izlaz.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_izlaz.Margin = new System.Windows.Forms.Padding(2);
             this.txt_izlaz.Name = "txt_izlaz";
             this.txt_izlaz.Size = new System.Drawing.Size(117, 32);
             this.txt_izlaz.TabIndex = 14;
@@ -222,7 +225,7 @@ namespace Kucni_budzet_VS
             // 
             this.txt_kolicina.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_kolicina.Location = new System.Drawing.Point(880, 214);
-            this.txt_kolicina.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_kolicina.Margin = new System.Windows.Forms.Padding(2);
             this.txt_kolicina.Name = "txt_kolicina";
             this.txt_kolicina.Size = new System.Drawing.Size(138, 32);
             this.txt_kolicina.TabIndex = 15;
@@ -231,7 +234,7 @@ namespace Kucni_budzet_VS
             // 
             this.lbl_trosak.AutoSize = true;
             this.lbl_trosak.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_trosak.Location = new System.Drawing.Point(63, 264);
+            this.lbl_trosak.Location = new System.Drawing.Point(1120, 174);
             this.lbl_trosak.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_trosak.Name = "lbl_trosak";
             this.lbl_trosak.Size = new System.Drawing.Size(95, 26);
@@ -242,7 +245,7 @@ namespace Kucni_budzet_VS
             // 
             this.lbl_org.AutoSize = true;
             this.lbl_org.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_org.Location = new System.Drawing.Point(231, 264);
+            this.lbl_org.Location = new System.Drawing.Point(29, 264);
             this.lbl_org.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_org.Name = "lbl_org";
             this.lbl_org.Size = new System.Drawing.Size(272, 26);
@@ -253,7 +256,7 @@ namespace Kucni_budzet_VS
             // 
             this.lbl_firma.AutoSize = true;
             this.lbl_firma.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_firma.Location = new System.Drawing.Point(588, 264);
+            this.lbl_firma.Location = new System.Drawing.Point(489, 264);
             this.lbl_firma.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_firma.Name = "lbl_firma";
             this.lbl_firma.Size = new System.Drawing.Size(89, 26);
@@ -264,37 +267,37 @@ namespace Kucni_budzet_VS
             // 
             this.cmb_org.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_org.FormattingEnabled = true;
-            this.cmb_org.Location = new System.Drawing.Point(220, 305);
-            this.cmb_org.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmb_org.Location = new System.Drawing.Point(9, 305);
+            this.cmb_org.Margin = new System.Windows.Forms.Padding(2);
             this.cmb_org.Name = "cmb_org";
-            this.cmb_org.Size = new System.Drawing.Size(288, 34);
+            this.cmb_org.Size = new System.Drawing.Size(307, 34);
             this.cmb_org.TabIndex = 19;
             // 
             // cmb_trosak
             // 
             this.cmb_trosak.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_trosak.FormattingEnabled = true;
-            this.cmb_trosak.Location = new System.Drawing.Point(9, 305);
-            this.cmb_trosak.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmb_trosak.Location = new System.Drawing.Point(1057, 212);
+            this.cmb_trosak.Margin = new System.Windows.Forms.Padding(2);
             this.cmb_trosak.Name = "cmb_trosak";
-            this.cmb_trosak.Size = new System.Drawing.Size(185, 34);
+            this.cmb_trosak.Size = new System.Drawing.Size(215, 34);
             this.cmb_trosak.TabIndex = 20;
             // 
             // cmb_firma
             // 
             this.cmb_firma.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_firma.FormattingEnabled = true;
-            this.cmb_firma.Location = new System.Drawing.Point(532, 305);
-            this.cmb_firma.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmb_firma.Location = new System.Drawing.Point(345, 303);
+            this.cmb_firma.Margin = new System.Windows.Forms.Padding(2);
             this.cmb_firma.Name = "cmb_firma";
-            this.cmb_firma.Size = new System.Drawing.Size(188, 34);
+            this.cmb_firma.Size = new System.Drawing.Size(363, 34);
             this.cmb_firma.TabIndex = 21;
             // 
             // lbl_opis
             // 
             this.lbl_opis.AutoSize = true;
             this.lbl_opis.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_opis.Location = new System.Drawing.Point(853, 264);
+            this.lbl_opis.Location = new System.Drawing.Point(972, 264);
             this.lbl_opis.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_opis.Name = "lbl_opis";
             this.lbl_opis.Size = new System.Drawing.Size(70, 26);
@@ -304,28 +307,29 @@ namespace Kucni_budzet_VS
             // txt_opis
             // 
             this.txt_opis.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_opis.Location = new System.Drawing.Point(748, 305);
-            this.txt_opis.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_opis.Location = new System.Drawing.Point(736, 305);
+            this.txt_opis.Margin = new System.Windows.Forms.Padding(2);
             this.txt_opis.Name = "txt_opis";
-            this.txt_opis.Size = new System.Drawing.Size(270, 32);
+            this.txt_opis.Size = new System.Drawing.Size(536, 32);
             this.txt_opis.TabIndex = 23;
             // 
             // btn_dodaj
             // 
             this.btn_dodaj.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_dodaj.Location = new System.Drawing.Point(529, 36);
-            this.btn_dodaj.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_dodaj.Location = new System.Drawing.Point(548, 37);
+            this.btn_dodaj.Margin = new System.Windows.Forms.Padding(2);
             this.btn_dodaj.Name = "btn_dodaj";
             this.btn_dodaj.Size = new System.Drawing.Size(160, 37);
             this.btn_dodaj.TabIndex = 24;
             this.btn_dodaj.Text = "Додај трансакцију";
             this.btn_dodaj.UseVisualStyleBackColor = true;
+            this.btn_dodaj.Click += new System.EventHandler(this.btn_dodaj_Click);
             // 
             // btn_izmeni
             // 
             this.btn_izmeni.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_izmeni.Location = new System.Drawing.Point(693, 36);
-            this.btn_izmeni.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_izmeni.Location = new System.Drawing.Point(824, 37);
+            this.btn_izmeni.Margin = new System.Windows.Forms.Padding(2);
             this.btn_izmeni.Name = "btn_izmeni";
             this.btn_izmeni.Size = new System.Drawing.Size(160, 37);
             this.btn_izmeni.TabIndex = 25;
@@ -335,8 +339,8 @@ namespace Kucni_budzet_VS
             // btn_obrisi
             // 
             this.btn_obrisi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_obrisi.Location = new System.Drawing.Point(857, 36);
-            this.btn_obrisi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_obrisi.Location = new System.Drawing.Point(1084, 37);
+            this.btn_obrisi.Margin = new System.Windows.Forms.Padding(2);
             this.btn_obrisi.Name = "btn_obrisi";
             this.btn_obrisi.Size = new System.Drawing.Size(160, 37);
             this.btn_obrisi.TabIndex = 26;
@@ -348,7 +352,7 @@ namespace Kucni_budzet_VS
             this.txt_stanje.Enabled = false;
             this.txt_stanje.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_stanje.Location = new System.Drawing.Point(181, 108);
-            this.txt_stanje.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_stanje.Margin = new System.Windows.Forms.Padding(2);
             this.txt_stanje.Name = "txt_stanje";
             this.txt_stanje.Size = new System.Drawing.Size(332, 32);
             this.txt_stanje.TabIndex = 28;
@@ -364,11 +368,28 @@ namespace Kucni_budzet_VS
             this.lbl_stanje.TabIndex = 27;
             this.lbl_stanje.Text = "Стање:";
             // 
+            // lbl_poruka
+            // 
+            this.lbl_poruka.AutoSize = true;
+            this.lbl_poruka.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_poruka.ForeColor = System.Drawing.Color.Red;
+            this.lbl_poruka.Location = new System.Drawing.Point(565, 111);
+            this.lbl_poruka.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_poruka.Name = "lbl_poruka";
+            this.lbl_poruka.Size = new System.Drawing.Size(0, 26);
+            this.lbl_poruka.TabIndex = 29;
+            // 
+            // stoperica
+            // 
+            this.stoperica.Interval = 2500;
+            this.stoperica.Tick += new System.EventHandler(this.stoperica_Tick);
+            // 
             // Transakcije
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1026, 629);
+            this.ClientSize = new System.Drawing.Size(1283, 695);
+            this.Controls.Add(this.lbl_poruka);
             this.Controls.Add(this.txt_stanje);
             this.Controls.Add(this.lbl_stanje);
             this.Controls.Add(this.btn_obrisi);
@@ -398,7 +419,7 @@ namespace Kucni_budzet_VS
             this.Controls.Add(this.txt_email);
             this.Controls.Add(this.lbl_ime_prezime);
             this.Controls.Add(this.lbl_email);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Transakcije";
             this.Text = "Трансакције";
             this.Load += new System.EventHandler(this.Transakcije_Load);
@@ -439,5 +460,7 @@ namespace Kucni_budzet_VS
         private System.Windows.Forms.Button btn_obrisi;
         private System.Windows.Forms.TextBox txt_stanje;
         private System.Windows.Forms.Label lbl_stanje;
+        private System.Windows.Forms.Label lbl_poruka;
+        private System.Windows.Forms.Timer stoperica;
     }
 }
