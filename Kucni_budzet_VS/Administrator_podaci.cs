@@ -69,5 +69,29 @@ namespace Kucni_budzet_VS
             Transakcije forma = new Transakcije();
             forma.Show();
         }
+
+        private void i_novcanici_Click(object sender, EventArgs e)
+        {
+            Sifarnik frm_novcanici = new Sifarnik("Novcanik");
+            frm_novcanici.Show();
+        }
+
+        private void i_troskovi_Click(object sender, EventArgs e)
+        {
+            Sifarnik frm_novcanici = new Sifarnik("Trosak");
+            frm_novcanici.Show();
+        }
+
+        private void i_org_Click(object sender, EventArgs e)
+        {
+            Sifarnik frm_novcanici = new Sifarnik("Organizaciona_jedinica");
+            frm_novcanici.Show();
+        }
+
+        private void i_firme_Click(object sender, EventArgs e)
+        {
+            Sifarnik frm_novcanici = new Sifarnik("Firma");
+            frm_novcanici.Show();
+        }
     }
 }

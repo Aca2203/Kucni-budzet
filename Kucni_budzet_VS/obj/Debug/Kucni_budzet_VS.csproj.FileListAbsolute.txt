@@ -24,3 +24,4 @@ C:\Users\Sale\Documents\GitHub\Kucni-budzet\Kucni_budzet_VS\obj\Debug\Kucni_budz
 C:\Users\Sale\Documents\GitHub\Kucni-budzet\Kucni_budzet_VS\obj\Debug\Kucni_budzet_VS.csproj.CoreCompileInputs.cache
 C:\Users\Sale\Documents\GitHub\Kucni-budzet\Kucni_budzet_VS\obj\Debug\Kucni_budzet_VS.exe
 C:\Users\Sale\Documents\GitHub\Kucni-budzet\Kucni_budzet_VS\obj\Debug\Kucni_budzet_VS.pdb
+C:\Users\Sale\Documents\GitHub\Kucni-budzet\Kucni_budzet_VS\obj\Debug\Kucni_budzet_VS.Sifarnik.resources

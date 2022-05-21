@@ -18,7 +18,7 @@ namespace Kucni_budzet_VS
         DataTable dt_promet;
         string naredba;
         SqlCommand komanda;
-        int Forma_id;
+        int Forma_id = 0;
 
         public Transakcije()
         {
@@ -26,7 +26,7 @@ namespace Kucni_budzet_VS
         }
 
         private void Transakcije_Load(object sender, EventArgs e)
-        {
+        {           
             txt_popuni();
             txt_stanje_popuni();
             grid_popuni();
@@ -347,100 +347,108 @@ namespace Kucni_budzet_VS
         {
             try
             {
-                StringBuilder naredba = new StringBuilder("UPDATE Promet SET ");
-                // Датум
-                naredba.Append("datum = '" + cmb_datum.Value.ToString("yyyy-MM-dd") + "', ");
-
-                // Новчаник
-                if ((int)cmb_novcanik.SelectedValue == 0)
+                if (Forma_id == 0)
                 {
                     stoperica.Start();
-                    lbl_poruka.Text = "Молимо Вас да изаберете новчаник!";
+                    lbl_poruka.Text = "Молимо вас да изаберете трансакцију коју желите да промените!";
                 }
                 else
                 {
-                    naredba.Append("FK_novcanik_id = " + cmb_novcanik.SelectedValue + ", ");
+                    StringBuilder naredba = new StringBuilder("UPDATE Promet SET ");
+                    // Датум
+                    naredba.Append("datum = '" + cmb_datum.Value.ToString("yyyy-MM-dd") + "', ");
 
-                    // Трошак
-                    if (cmb_trosak.SelectedIndex == -1)
-                    {
-                        naredba.Append("FK_trosak_id = NULL, ");
-                    }
-                    else
-                    {
-                        naredba.Append("FK_trosak_id = " + cmb_trosak.SelectedValue + ", ");
-                    }
-
-                    // Количина
-                    if (txt_kolicina.Text == "")
-                    {
-                        naredba.Append("kolicina = 1, ");
-                    }
-                    else
-                    {
-                        naredba.Append("kolicina = " + txt_kolicina.Text + ", ");
-                    }
-
-                    // Организациона јединица
-                    if (cmb_org.SelectedIndex == -1)
-                    {
-                        naredba.Append("FK_organizaciona_jedinica_id = NULL, ");
-                    }
-                    else
-                    {
-                        naredba.Append("FK_organizaciona_jedinica_id = " + cmb_org.SelectedValue + ", ");
-                    }
-
-                    // Фирма
-                    if (cmb_firma.SelectedIndex == -1)
-                    {
-                        naredba.Append("FK_firma_id = NULL, ");
-                    }
-                    else
-                    {
-                        naredba.Append("FK_firma_id = " + cmb_firma.SelectedValue + ", ");
-                    }
-
-                    // Улаз и излаз (користећи XOR оператор)
-                    if (txt_ulaz.Text == "" ^ txt_izlaz.Text == "")
-                    {
-                        if (txt_ulaz.Text == "")
-                        {
-                            naredba.Append("ulaz = NULL, izlaz = " + txt_izlaz.Text + ", ");
-                        }
-                        else
-                        {
-                            naredba.Append("ulaz = " + txt_ulaz.Text + ", izlaz = NULL, ");
-                        }
-
-                        // Опис
-                        if (txt_opis.Text == "")
-                        {
-                            naredba.Append("opis = NULL ");
-                        }
-                        else
-                        {
-                            naredba.Append("opis = N'" + txt_opis.Text + "' ");
-                        }
-                        naredba.Append("WHERE id = " + Forma_id);
-
-                        //MessageBox.Show(naredba.ToString());
-
-                        komanda = new SqlCommand(naredba.ToString(), veza);
-
-                        veza.Open();
-                        komanda.ExecuteNonQuery();
-                        veza.Close();
-
-                        txt_stanje_promeni();
-                        grid_popuni();
-                    }
-                    else
+                    // Новчаник
+                    if ((int)cmb_novcanik.SelectedValue == 0)
                     {
                         stoperica.Start();
-                        lbl_poruka.Text = "Мора бити попуњен или само улаз или само излаз!";
+                        lbl_poruka.Text = "Молимо Вас да изаберете новчаник!";
                     }
-                }
+                    else
+                    {
+                        naredba.Append("FK_novcanik_id = " + cmb_novcanik.SelectedValue + ", ");
+
+                        // Трошак
+                        if (cmb_trosak.SelectedIndex == -1)
+                        {
+                            naredba.Append("FK_trosak_id = NULL, ");
+                        }
+                        else
+                        {
+                            naredba.Append("FK_trosak_id = " + cmb_trosak.SelectedValue + ", ");
+                        }
+
+                        // Количина
+                        if (txt_kolicina.Text == "")
+                        {
+                            naredba.Append("kolicina = 1, ");
+                        }
+                        else
+                        {
+                            naredba.Append("kolicina = " + txt_kolicina.Text + ", ");
+                        }
+
+                        // Организациона јединица
+                        if (cmb_org.SelectedIndex == -1)
+                        {
+                            naredba.Append("FK_organizaciona_jedinica_id = NULL, ");
+                        }
+                        else
+                        {
+                            naredba.Append("FK_organizaciona_jedinica_id = " + cmb_org.SelectedValue + ", ");
+                        }
+
+                        // Фирма
+                        if (cmb_firma.SelectedIndex == -1)
+                        {
+                            naredba.Append("FK_firma_id = NULL, ");
+                        }
+                        else
+                        {
+                            naredba.Append("FK_firma_id = " + cmb_firma.SelectedValue + ", ");
+                        }
+
+                        // Улаз и излаз (користећи XOR оператор)
+                        if (txt_ulaz.Text == "" ^ txt_izlaz.Text == "")
+                        {
+                            if (txt_ulaz.Text == "")
+                            {
+                                naredba.Append("ulaz = NULL, izlaz = " + txt_izlaz.Text + ", ");
+                            }
+                            else
+                            {
+                                naredba.Append("ulaz = " + txt_ulaz.Text + ", izlaz = NULL, ");
+                            }
+
+                            // Опис
+                            if (txt_opis.Text == "")
+                            {
+                                naredba.Append("opis = NULL ");
+                            }
+                            else
+                            {
+                                naredba.Append("opis = N'" + txt_opis.Text + "' ");
+                            }
+                            naredba.Append("WHERE id = " + Forma_id);
+
+                            //MessageBox.Show(naredba.ToString());
+
+                            komanda = new SqlCommand(naredba.ToString(), veza);
+
+                            veza.Open();
+                            komanda.ExecuteNonQuery();
+                            veza.Close();
+
+                            txt_stanje_promeni();
+                            grid_popuni();
+                        }
+                        else
+                        {
+                            stoperica.Start();
+                            lbl_poruka.Text = "Мора бити попуњен или само улаз или само излаз!";
+                        }
+                    }
+                }                
             }
             catch (Exception greska)
             {
@@ -450,16 +458,24 @@ namespace Kucni_budzet_VS
 
         private void btn_obrisi_Click(object sender, EventArgs e)
         {
-            StringBuilder naredba = new StringBuilder("DELETE FROM Promet WHERE id = " + Forma_id);
+            if (Forma_id == 0)
+            {
+                stoperica.Start();
+                lbl_poruka.Text = "Молимо вас да изаберете трансакцију коју желите да обришете!";
+            }
+            else
+            {
+                StringBuilder naredba = new StringBuilder("DELETE FROM Promet WHERE id = " + Forma_id);
 
-            komanda = new SqlCommand(naredba.ToString(), veza);
+                komanda = new SqlCommand(naredba.ToString(), veza);
 
-            veza.Open();
-            komanda.ExecuteNonQuery();
-            veza.Close();
+                veza.Open();
+                komanda.ExecuteNonQuery();
+                veza.Close();
 
-            txt_stanje_promeni();
-            grid_popuni();
+                txt_stanje_promeni();
+                grid_popuni();
+            }            
         }
     }
 }
