@@ -118,6 +118,7 @@ namespace Kucni_budzet_VS
             this.grid_promet.RowTemplate.Height = 24;
             this.grid_promet.Size = new System.Drawing.Size(1263, 322);
             this.grid_promet.TabIndex = 4;
+            this.grid_promet.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_promet_CellClick);
             // 
             // lbl_linija
             // 
@@ -336,6 +337,7 @@ namespace Kucni_budzet_VS
             this.btn_izmeni.TabIndex = 25;
             this.btn_izmeni.Text = "Измени трансакцију";
             this.btn_izmeni.UseVisualStyleBackColor = true;
+            this.btn_izmeni.Click += new System.EventHandler(this.btn_izmeni_Click);
             // 
             // btn_obrisi
             // 
@@ -347,6 +349,7 @@ namespace Kucni_budzet_VS
             this.btn_obrisi.TabIndex = 26;
             this.btn_obrisi.Text = "Обриши трансакцију";
             this.btn_obrisi.UseVisualStyleBackColor = true;
+            this.btn_obrisi.Click += new System.EventHandler(this.btn_obrisi_Click);
             // 
             // txt_stanje
             // 
@@ -374,7 +377,7 @@ namespace Kucni_budzet_VS
             this.lbl_poruka.AutoSize = true;
             this.lbl_poruka.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_poruka.ForeColor = System.Drawing.Color.Red;
-            this.lbl_poruka.Location = new System.Drawing.Point(565, 111);
+            this.lbl_poruka.Location = new System.Drawing.Point(562, 97);
             this.lbl_poruka.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_poruka.Name = "lbl_poruka";
             this.lbl_poruka.Size = new System.Drawing.Size(0, 26);

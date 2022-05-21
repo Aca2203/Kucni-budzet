@@ -8,7 +8,7 @@ namespace Kucni_budzet_VS
 {
     static class Program
     {        
-        static public string email = "aleksandarstefanovic@KB_A.rs";        
+        static public string email = "tanjamarkovic@KB_K.rs";        
 
         /// <summary>
         /// The main entry point for the application.
