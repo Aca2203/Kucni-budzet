@@ -25,3 +25,5 @@ C:\Users\Sale\Documents\GitHub\Kucni-budzet\Kucni_budzet_VS\obj\Debug\Kucni_budz
 C:\Users\Sale\Documents\GitHub\Kucni-budzet\Kucni_budzet_VS\obj\Debug\Kucni_budzet_VS.exe
 C:\Users\Sale\Documents\GitHub\Kucni-budzet\Kucni_budzet_VS\obj\Debug\Kucni_budzet_VS.pdb
 C:\Users\Sale\Documents\GitHub\Kucni-budzet\Kucni_budzet_VS\obj\Debug\Kucni_budzet_VS.Sifarnik.resources
+C:\Users\Sale\Documents\GitHub\Kucni-budzet\Kucni_budzet_VS\obj\Debug\Kucni_budzet_VS.Novcanik.resources
+C:\Users\Sale\Documents\GitHub\Kucni-budzet\Kucni_budzet_VS\obj\Debug\Kucni_budzet_VS.Osobe.resources

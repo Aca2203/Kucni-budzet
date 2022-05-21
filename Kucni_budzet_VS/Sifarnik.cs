@@ -28,11 +28,7 @@ namespace Kucni_budzet_VS
         private void Sifarnik_Load(object sender, EventArgs e)
         {
             switch (ime_tabele)
-            {
-                case "Novcanik":
-                    this.Text = "Новчаници";
-                    break;
-
+            {                
                 case "Trosak":
                     this.Text = "Трошкови";
                     break;
@@ -53,15 +49,8 @@ namespace Kucni_budzet_VS
         }
 
         private void grid_ucitaj()
-        {
-            if (ime_tabele == "Novcanik")
-            {
-                naredba = "SELECT id, naziv AS 'Назив', stanje AS 'Стање', FK_osoba_email FROM Novcanik WHERE FK_osoba_email = '" + Program.email + "'";
-            }
-            else
-            {
-                naredba = "SELECT id, naziv AS 'Назив' FROM " + ime_tabele;                
-            }
+        {            
+            naredba = "SELECT id, naziv AS 'Назив' FROM " + ime_tabele;                            
 
             adapter = new SqlDataAdapter(naredba, veza);
             tabela = new DataTable();
@@ -70,8 +59,7 @@ namespace Kucni_budzet_VS
 
             grid_podaci.DataSource = tabela;
             grid_podaci.Columns["id"].ReadOnly = true;
-            grid_podaci.Columns["id"].Width = 55;
-            //grid_podaci.Columns["FK_osoba_email"].Visible = false;
+            grid_podaci.Columns["id"].Width = 55;            
         }
 
         private void btn_izmeni_Click(object sender, EventArgs e)

@@ -72,8 +72,8 @@ namespace Kucni_budzet_VS
 
         private void i_novcanici_Click(object sender, EventArgs e)
         {
-            Sifarnik frm_novcanici = new Sifarnik("Novcanik");
-            frm_novcanici.Show();
+            Novcanik frm_novcanik = new Novcanik();
+            frm_novcanik.Show();
         }
 
         private void i_troskovi_Click(object sender, EventArgs e)
@@ -92,6 +92,12 @@ namespace Kucni_budzet_VS
         {
             Sifarnik frm_novcanici = new Sifarnik("Firma");
             frm_novcanici.Show();
+        }
+
+        private void i_osobe_Click(object sender, EventArgs e)
+        {
+            Osobe frm_osobe = new Osobe();
+            frm_osobe.Show();
         }
     }
 }

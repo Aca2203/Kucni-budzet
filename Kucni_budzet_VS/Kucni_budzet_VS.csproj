@@ -60,6 +60,18 @@
     <Compile Include="Korisnik_podaci.Designer.cs">
       <DependentUpon>Korisnik_podaci.cs</DependentUpon>
     </Compile>
+    <Compile Include="Novcanik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Novcanik.Designer.cs">
+      <DependentUpon>Novcanik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Osobe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Osobe.Designer.cs">
+      <DependentUpon>Osobe.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sifarnik.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +97,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Korisnik_podaci.resx">
       <DependentUpon>Korisnik_podaci.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Novcanik.resx">
+      <DependentUpon>Novcanik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Osobe.resx">
+      <DependentUpon>Osobe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Prijava.resx">
       <DependentUpon>Prijava.cs</DependentUpon>
