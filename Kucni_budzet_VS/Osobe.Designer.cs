@@ -48,7 +48,7 @@ namespace Kucni_budzet_VS
             this.btn_prethodni = new System.Windows.Forms.Button();
             this.btn_sledeci = new System.Windows.Forms.Button();
             this.txt_pozicija = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_uloga = new System.Windows.Forms.Label();
             this.cmb_uloga = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
@@ -257,16 +257,16 @@ namespace Kucni_budzet_VS
             this.txt_pozicija.Size = new System.Drawing.Size(77, 32);
             this.txt_pozicija.TabIndex = 48;
             // 
-            // label1
+            // lbl_uloga
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(136, 317);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 26);
-            this.label1.TabIndex = 49;
-            this.label1.Text = "Улога:";
+            this.lbl_uloga.AutoSize = true;
+            this.lbl_uloga.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_uloga.Location = new System.Drawing.Point(136, 317);
+            this.lbl_uloga.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_uloga.Name = "lbl_uloga";
+            this.lbl_uloga.Size = new System.Drawing.Size(77, 26);
+            this.lbl_uloga.TabIndex = 49;
+            this.lbl_uloga.Text = "Улога:";
             // 
             // cmb_uloga
             // 
@@ -284,7 +284,7 @@ namespace Kucni_budzet_VS
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(732, 521);
             this.Controls.Add(this.cmb_uloga);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbl_uloga);
             this.Controls.Add(this.txt_pozicija);
             this.Controls.Add(this.btn_sledeci);
             this.Controls.Add(this.btn_prethodni);
@@ -333,7 +333,7 @@ namespace Kucni_budzet_VS
         private System.Windows.Forms.Button btn_prethodni;
         private System.Windows.Forms.Button btn_sledeci;
         private System.Windows.Forms.TextBox txt_pozicija;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_uloga;
         private System.Windows.Forms.ComboBox cmb_uloga;
     }
 }

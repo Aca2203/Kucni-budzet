@@ -18,7 +18,7 @@ namespace Kucni_budzet_VS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Korisnik_podaci());
+            Application.Run(new Novcanik());
         }
     }
 }
