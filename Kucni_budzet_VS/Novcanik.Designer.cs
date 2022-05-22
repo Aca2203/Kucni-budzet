@@ -29,6 +29,7 @@ namespace Kucni_budzet_VS
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txt_pozicija = new System.Windows.Forms.TextBox();
             this.txt_stanje = new System.Windows.Forms.TextBox();
             this.txt_naziv = new System.Windows.Forms.TextBox();
@@ -42,6 +43,17 @@ namespace Kucni_budzet_VS
             this.btn_obrisi = new System.Windows.Forms.Button();
             this.btn_dodaj = new System.Windows.Forms.Button();
             this.btn_izmeni = new System.Windows.Forms.Button();
+            this.lbl_prebacivanje = new System.Windows.Forms.Label();
+            this.cmb_iz = new System.Windows.Forms.ComboBox();
+            this.cmb_u = new System.Windows.Forms.ComboBox();
+            this.lbl_linija = new System.Windows.Forms.Label();
+            this.txt_suma = new System.Windows.Forms.TextBox();
+            this.lbl_iz = new System.Windows.Forms.Label();
+            this.lbl_u = new System.Windows.Forms.Label();
+            this.lbl_suma = new System.Windows.Forms.Label();
+            this.btn_prebaci = new System.Windows.Forms.Button();
+            this.lbl_poruka = new System.Windows.Forms.Label();
+            this.stoperica = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // txt_pozicija
@@ -115,6 +127,7 @@ namespace Kucni_budzet_VS
             this.btn_sledeci.TabIndex = 61;
             this.btn_sledeci.Text = ">";
             this.btn_sledeci.UseVisualStyleBackColor = true;
+            this.btn_sledeci.Click += new System.EventHandler(this.btn_sledeci_Click);
             // 
             // btn_prethodni
             // 
@@ -126,6 +139,7 @@ namespace Kucni_budzet_VS
             this.btn_prethodni.TabIndex = 60;
             this.btn_prethodni.Text = "<";
             this.btn_prethodni.UseVisualStyleBackColor = true;
+            this.btn_prethodni.Click += new System.EventHandler(this.btn_prethodni_Click);
             // 
             // btn_prvi
             // 
@@ -137,6 +151,7 @@ namespace Kucni_budzet_VS
             this.btn_prvi.TabIndex = 59;
             this.btn_prvi.Text = "<<";
             this.btn_prvi.UseVisualStyleBackColor = true;
+            this.btn_prvi.Click += new System.EventHandler(this.btn_prvi_Click);
             // 
             // btn_poslednji
             // 
@@ -148,6 +163,7 @@ namespace Kucni_budzet_VS
             this.btn_poslednji.TabIndex = 58;
             this.btn_poslednji.Text = ">>";
             this.btn_poslednji.UseVisualStyleBackColor = true;
+            this.btn_poslednji.Click += new System.EventHandler(this.btn_poslednji_Click);
             // 
             // btn_obrisi
             // 
@@ -159,6 +175,7 @@ namespace Kucni_budzet_VS
             this.btn_obrisi.TabIndex = 57;
             this.btn_obrisi.Text = "Обриши новчаник";
             this.btn_obrisi.UseVisualStyleBackColor = true;
+            this.btn_obrisi.Click += new System.EventHandler(this.btn_obrisi_Click);
             // 
             // btn_dodaj
             // 
@@ -170,6 +187,7 @@ namespace Kucni_budzet_VS
             this.btn_dodaj.TabIndex = 56;
             this.btn_dodaj.Text = "Додај новчаник";
             this.btn_dodaj.UseVisualStyleBackColor = true;
+            this.btn_dodaj.Click += new System.EventHandler(this.btn_dodaj_Click);
             // 
             // btn_izmeni
             // 
@@ -181,12 +199,134 @@ namespace Kucni_budzet_VS
             this.btn_izmeni.TabIndex = 55;
             this.btn_izmeni.Text = "Измени податке";
             this.btn_izmeni.UseVisualStyleBackColor = true;
+            this.btn_izmeni.Click += new System.EventHandler(this.btn_izmeni_Click);
+            // 
+            // lbl_prebacivanje
+            // 
+            this.lbl_prebacivanje.AutoSize = true;
+            this.lbl_prebacivanje.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_prebacivanje.Location = new System.Drawing.Point(254, 362);
+            this.lbl_prebacivanje.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_prebacivanje.Name = "lbl_prebacivanje";
+            this.lbl_prebacivanje.Size = new System.Drawing.Size(229, 26);
+            this.lbl_prebacivanje.TabIndex = 62;
+            this.lbl_prebacivanje.Text = "Пребацивање новца:";
+            // 
+            // cmb_iz
+            // 
+            this.cmb_iz.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_iz.FormattingEnabled = true;
+            this.cmb_iz.Location = new System.Drawing.Point(141, 412);
+            this.cmb_iz.Margin = new System.Windows.Forms.Padding(2);
+            this.cmb_iz.Name = "cmb_iz";
+            this.cmb_iz.Size = new System.Drawing.Size(183, 34);
+            this.cmb_iz.TabIndex = 63;
+            // 
+            // cmb_u
+            // 
+            this.cmb_u.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_u.FormattingEnabled = true;
+            this.cmb_u.Location = new System.Drawing.Point(141, 472);
+            this.cmb_u.Margin = new System.Windows.Forms.Padding(2);
+            this.cmb_u.Name = "cmb_u";
+            this.cmb_u.Size = new System.Drawing.Size(183, 34);
+            this.cmb_u.TabIndex = 64;
+            // 
+            // lbl_linija
+            // 
+            this.lbl_linija.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lbl_linija.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lbl_linija.Location = new System.Drawing.Point(12, 336);
+            this.lbl_linija.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_linija.Name = "lbl_linija";
+            this.lbl_linija.Size = new System.Drawing.Size(714, 2);
+            this.lbl_linija.TabIndex = 65;
+            // 
+            // txt_suma
+            // 
+            this.txt_suma.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_suma.Location = new System.Drawing.Point(141, 538);
+            this.txt_suma.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_suma.Name = "txt_suma";
+            this.txt_suma.Size = new System.Drawing.Size(183, 32);
+            this.txt_suma.TabIndex = 66;
+            // 
+            // lbl_iz
+            // 
+            this.lbl_iz.AutoSize = true;
+            this.lbl_iz.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_iz.Location = new System.Drawing.Point(83, 415);
+            this.lbl_iz.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_iz.Name = "lbl_iz";
+            this.lbl_iz.Size = new System.Drawing.Size(45, 26);
+            this.lbl_iz.TabIndex = 67;
+            this.lbl_iz.Text = "Из:";
+            // 
+            // lbl_u
+            // 
+            this.lbl_u.AutoSize = true;
+            this.lbl_u.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_u.Location = new System.Drawing.Point(96, 475);
+            this.lbl_u.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_u.Name = "lbl_u";
+            this.lbl_u.Size = new System.Drawing.Size(32, 26);
+            this.lbl_u.TabIndex = 68;
+            this.lbl_u.Text = "У:";
+            // 
+            // lbl_suma
+            // 
+            this.lbl_suma.AutoSize = true;
+            this.lbl_suma.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_suma.Location = new System.Drawing.Point(55, 541);
+            this.lbl_suma.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_suma.Name = "lbl_suma";
+            this.lbl_suma.Size = new System.Drawing.Size(73, 26);
+            this.lbl_suma.TabIndex = 69;
+            this.lbl_suma.Text = "Сума:";
+            // 
+            // btn_prebaci
+            // 
+            this.btn_prebaci.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_prebaci.Location = new System.Drawing.Point(459, 462);
+            this.btn_prebaci.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_prebaci.Name = "btn_prebaci";
+            this.btn_prebaci.Size = new System.Drawing.Size(219, 52);
+            this.btn_prebaci.TabIndex = 70;
+            this.btn_prebaci.Text = "Пребаци новац";
+            this.btn_prebaci.UseVisualStyleBackColor = true;
+            this.btn_prebaci.Click += new System.EventHandler(this.btn_prebaci_Click);
+            // 
+            // lbl_poruka
+            // 
+            this.lbl_poruka.AutoSize = true;
+            this.lbl_poruka.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_poruka.ForeColor = System.Drawing.Color.Red;
+            this.lbl_poruka.Location = new System.Drawing.Point(83, 592);
+            this.lbl_poruka.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_poruka.Name = "lbl_poruka";
+            this.lbl_poruka.Size = new System.Drawing.Size(0, 26);
+            this.lbl_poruka.TabIndex = 72;
+            // 
+            // stoperica
+            // 
+            this.stoperica.Interval = 2500;
+            this.stoperica.Tick += new System.EventHandler(this.stoperica_Tick);
             // 
             // Novcanik
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(737, 324);
+            this.ClientSize = new System.Drawing.Size(737, 637);
+            this.Controls.Add(this.lbl_poruka);
+            this.Controls.Add(this.btn_prebaci);
+            this.Controls.Add(this.lbl_suma);
+            this.Controls.Add(this.lbl_u);
+            this.Controls.Add(this.lbl_iz);
+            this.Controls.Add(this.txt_suma);
+            this.Controls.Add(this.lbl_linija);
+            this.Controls.Add(this.cmb_u);
+            this.Controls.Add(this.cmb_iz);
+            this.Controls.Add(this.lbl_prebacivanje);
             this.Controls.Add(this.btn_sledeci);
             this.Controls.Add(this.btn_prethodni);
             this.Controls.Add(this.btn_prvi);
@@ -202,6 +342,7 @@ namespace Kucni_budzet_VS
             this.Controls.Add(this.lbl_tekst);
             this.Name = "Novcanik";
             this.Text = "Новчаник";
+            this.Load += new System.EventHandler(this.Novcanik_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -222,5 +363,16 @@ namespace Kucni_budzet_VS
         private System.Windows.Forms.Button btn_obrisi;
         private System.Windows.Forms.Button btn_dodaj;
         private System.Windows.Forms.Button btn_izmeni;
+        private System.Windows.Forms.Label lbl_prebacivanje;
+        private System.Windows.Forms.ComboBox cmb_iz;
+        private System.Windows.Forms.ComboBox cmb_u;
+        private System.Windows.Forms.Label lbl_linija;
+        private System.Windows.Forms.TextBox txt_suma;
+        private System.Windows.Forms.Label lbl_iz;
+        private System.Windows.Forms.Label lbl_u;
+        private System.Windows.Forms.Label lbl_suma;
+        private System.Windows.Forms.Button btn_prebaci;
+        private System.Windows.Forms.Label lbl_poruka;
+        private System.Windows.Forms.Timer stoperica;
     }
 }
