@@ -51,7 +51,7 @@ namespace Kucni_budzet_VS
             // 
             this.btn_izmeni.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_izmeni.Location = new System.Drawing.Point(667, 198);
-            this.btn_izmeni.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_izmeni.Margin = new System.Windows.Forms.Padding(2);
             this.btn_izmeni.Name = "btn_izmeni";
             this.btn_izmeni.Size = new System.Drawing.Size(219, 52);
             this.btn_izmeni.TabIndex = 26;
@@ -61,9 +61,10 @@ namespace Kucni_budzet_VS
             // 
             // txt_jmbg
             // 
+            this.txt_jmbg.Enabled = false;
             this.txt_jmbg.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_jmbg.Location = new System.Drawing.Point(183, 209);
-            this.txt_jmbg.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_jmbg.Margin = new System.Windows.Forms.Padding(2);
             this.txt_jmbg.Name = "txt_jmbg";
             this.txt_jmbg.Size = new System.Drawing.Size(327, 32);
             this.txt_jmbg.TabIndex = 25;
@@ -72,7 +73,7 @@ namespace Kucni_budzet_VS
             // 
             this.txt_lozinka.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_lozinka.Location = new System.Drawing.Point(635, 151);
-            this.txt_lozinka.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_lozinka.Margin = new System.Windows.Forms.Padding(2);
             this.txt_lozinka.Name = "txt_lozinka";
             this.txt_lozinka.Size = new System.Drawing.Size(327, 32);
             this.txt_lozinka.TabIndex = 24;
@@ -82,7 +83,7 @@ namespace Kucni_budzet_VS
             this.txt_email.Enabled = false;
             this.txt_email.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_email.Location = new System.Drawing.Point(183, 151);
-            this.txt_email.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_email.Margin = new System.Windows.Forms.Padding(2);
             this.txt_email.Name = "txt_email";
             this.txt_email.Size = new System.Drawing.Size(327, 32);
             this.txt_email.TabIndex = 23;
@@ -91,7 +92,7 @@ namespace Kucni_budzet_VS
             // 
             this.txt_prezime.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_prezime.Location = new System.Drawing.Point(635, 93);
-            this.txt_prezime.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_prezime.Margin = new System.Windows.Forms.Padding(2);
             this.txt_prezime.Name = "txt_prezime";
             this.txt_prezime.Size = new System.Drawing.Size(327, 32);
             this.txt_prezime.TabIndex = 22;
@@ -100,7 +101,7 @@ namespace Kucni_budzet_VS
             // 
             this.txt_ime.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_ime.Location = new System.Drawing.Point(183, 93);
-            this.txt_ime.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_ime.Margin = new System.Windows.Forms.Padding(2);
             this.txt_ime.Name = "txt_ime";
             this.txt_ime.Size = new System.Drawing.Size(327, 32);
             this.txt_ime.TabIndex = 21;
@@ -217,7 +218,7 @@ namespace Kucni_budzet_VS
             this.Controls.Add(this.lbl_lozinka);
             this.Controls.Add(this.lbl_email);
             this.Controls.Add(this.lbl_tekst);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Korisnik_podaci";
             this.Text = "Корисник - подаци";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Korisnik_FormClosed);
