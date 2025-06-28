@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 
 namespace Kucni_budzet_VS
 {
@@ -77,6 +69,15 @@ namespace Kucni_budzet_VS
         {
             lbl_poruka.Text = "";
             stoperica.Stop();
+        }
+
+        private void Prijava_Load(object sender, EventArgs e)
+        {
+            txt_email.Text = "aleksandarstefanovic@KB_A.rs";
+            txt_lozinka.Text = "coamafija1312";
+            this.BeginInvoke((MethodInvoker) delegate {
+                btn_prijava.Focus();
+            });
         }
     }
 }

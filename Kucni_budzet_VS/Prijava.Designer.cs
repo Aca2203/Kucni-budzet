@@ -123,6 +123,7 @@ namespace Kucni_budzet_VS
             this.Name = "Prijava";
             this.Text = "Пријава";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Login_FormClosed);
+            this.Load += new System.EventHandler(this.Prijava_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
